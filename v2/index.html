@@ -505,6 +505,7 @@ function viewProgramme(root) {
   if (!S.sections.length) { root.innerHTML = `<p class="placeholder">Programa bus paskelbta vėliau. <a href="#/">Į žemėlapį</a></p>`; return; }
   const chs = S.P.skyriai.map(ch => `
     <section class="panel chapter"><h3>${ch.id}. ${esc(ch.pavadinimas)}</h3>
+      ${(ch.tikslai || []).length ? `<p class="ind-note" style="margin:0 0 8px">Tikslai: ${ch.tikslai.map(esc).join(' · ')}</p>` : ''}
       <ol>${ch.skyriai.map(s => `<li><a href="#/programa/${s.id}"><span class="sid">${s.id}</span>${esc(s.pavadinimas)}</a>${(s.rodikliai || []).length ? '<span class="dot-ind" title="Susieta su atlaso rodikliais"></span>' : ''}</li>`).join('')}</ol>
     </section>`).join('');
   root.innerHTML = `

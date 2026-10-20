@@ -1,4 +1,641 @@
 {
- "busena": "RENGIAMA",
- "skyriai": []
+ "busena": "RENGIAMA – tik struktūra",
+ "sugeneruota": "2026-10-19",
+ "skyriai": [
+  {
+   "id": "1",
+   "pavadinimas": "Verslus ir efektyviai valdomas miestas",
+   "tikslai": [
+    "Auganti ir inovatyvi Kauno ekonomika",
+    "Atviras ir kartu kuriamas miestas",
+    "Paprastas, skaidrus ir efektyvus miesto valdymas"
+   ],
+   "skyriai": [
+    {
+     "id": "1.1",
+     "pavadinimas": "Miesto infrastruktūros agentūra gyventojų, nevyriausybinių organizacijų ir verslo iniciatyvoms įgyvendinti",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "1.2",
+     "pavadinimas": "Išmanių technologinių sprendimų miestas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "1.3",
+     "pavadinimas": "Gyvas, neskubantis senamiestis",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "1.4",
+     "pavadinimas": "Paprastesnis ir išmanesnis miestiečių aptarnavimas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "1.5",
+     "pavadinimas": "Studentų talentas – Kauno darbo rinkai",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "1.6",
+     "pavadinimas": "Žiedinė miesto ekonomika",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "1.7",
+     "pavadinimas": "Sidabrinės ekonomikos stiprinimas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "1.8",
+     "pavadinimas": "Bendruomenes girdintis miestas",
+     "rodikliai": [
+      "dalyvavimas"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "pavadinimas": "Auginančio švietimo miestas",
+   "tikslai": [
+    "Mokykla, kurioje nori dirbti mokytojas",
+    "Pagalba kiekvienam vaikui ir aiški mokyklų sistema",
+    "Šiuolaikiška ir gyva mokykla"
+   ],
+   "skyriai": [
+    {
+     "id": "2.1",
+     "pavadinimas": "Kaunas – miestas, kuriame mokytojas nori likti",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "2.2",
+     "pavadinimas": "Reali įtrauktis ir prieinama pagalba vaikui",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "2.3",
+     "pavadinimas": "Mokyklų vietos ten, kur jų reikia",
+     "rodikliai": [
+      "vaikai"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "2.4",
+     "pavadinimas": "Šiuolaikinė mokykla ir „SchoolLab 2.0",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "2.5",
+     "pavadinimas": "Saugi, gyva ir bendruomenei atvira mokykla",
+     "rodikliai": [
+      "vaikai",
+      "zaidimu_aiksteles"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "pavadinimas": "Įtraukiančios kultūros miestas",
+   "tikslai": [
+    "Stabilios ir aiškios sąlygos kultūrai kurti",
+    "Kultūra arčiau žmogaus",
+    "Gyvas, atviras ir kuriantis miestas"
+   ],
+   "skyriai": [
+    {
+     "id": "3.1",
+     "pavadinimas": "Stabilus ir aiškus kultūros finansavimas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "3.2",
+     "pavadinimas": "Kultūra rajonuose - ne tik centre",
+     "rodikliai": [
+      "kultura"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "3.3",
+     "pavadinimas": "Naktinė kultūra - gyvas ir saugus miestas po darbo valandų",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "3.4",
+     "pavadinimas": "Jaunų kūrėjų ir bendruomenių miestas",
+     "rodikliai": [
+      "kultura"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "3.5",
+     "pavadinimas": "Prieinama ir tarptautinė kultūra",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "pavadinimas": "Sporto miestas",
+   "tikslai": [
+    "Skaidri ir prieinama sporto sistema",
+    "Ilgalaikis sprendimas Kauno žiemos sportui",
+    "Galimybė sportuoti kiekviename rajone ir kiekvienam žmogui"
+   ],
+   "skyriai": [
+    {
+     "id": "4.1",
+     "pavadinimas": "Skaidrus finansavimas ir atviros sporto bazės",
+     "rodikliai": [
+      "sportas"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "4.2",
+     "pavadinimas": "Žiemos sportas – ledas visiems, kurie nori sportuoti",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "4.3",
+     "pavadinimas": "Sportas kiekviename rajone ir kiekvienam žmogui",
+     "rodikliai": [
+      "sportas",
+      "zaidimu_aiksteles"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "pavadinimas": "Patogaus judumo miestas",
+   "tikslai": [
+    "Saugios ir kiekvienam prieinamos gatvės",
+    "Realus pasirinkimas, kaip keliauti",
+    "Vientisa miesto susisiekimo sistema"
+   ],
+   "skyriai": [
+    {
+     "id": "5.1",
+     "pavadinimas": "Saugios gatvės",
+     "rodikliai": [
+      "pesciuju_takai"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "5.2",
+     "pavadinimas": "Miestas, kuriame patogu eiti",
+     "rodikliai": [
+      "pesciuju_takai"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "5.3",
+     "pavadinimas": "Miestas, prieinamas kiekvienam",
+     "rodikliai": [
+      "pesciuju_takai"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "5.4",
+     "pavadinimas": "Viešasis transportas, kuriuo verta važiuoti",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "5.5",
+     "pavadinimas": "Dviratis kaip kasdienis transportas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "5.6",
+     "pavadinimas": "Išmintingas stovėjimo vietų planavimas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "5.7",
+     "pavadinimas": "Kalvos, kurios nebūtų siena",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "5.8",
+     "pavadinimas": "Miesto logistika – kroviniai aplink miestą",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "6",
+   "pavadinimas": "Saugus ir atsparus miestas",
+   "tikslai": [
+    "Saugios viešosios erdvės ir atsakingos technologijos",
+    "Pasirengęs krizei miestas",
+    "Gyventojas, kuris žino, ką daryti"
+   ],
+   "skyriai": [
+    {
+     "id": "6.1",
+     "pavadinimas": "Vaizdo stebėjimas – apsauga be masinio sekimo",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "6.2",
+     "pavadinimas": "Pasirengęs krizei miestas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "7",
+   "pavadinimas": "Tvariai atsinaujinantis miestas",
+   "tikslai": [
+    "Atnaujinti namai ir gyvi rajonai",
+    "Miestas, augantis į vidų",
+    "Saugomas ir naujam gyvenimui pritaikomas miesto paveldas"
+   ],
+   "skyriai": [
+    {
+     "id": "7.1",
+     "pavadinimas": "Šiltas ir nebrangus būstas",
+     "rodikliai": [
+      "renovacija",
+      "renovacija_pradeta"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "7.2",
+     "pavadinimas": "Protingas tankinimas – augame į vidų",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "7.3",
+     "pavadinimas": "Apleistas turtas ir viešoji žemė – vienodos taisyklės visiems",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "7.4",
+     "pavadinimas": "Prižiūrimas paveldas",
+     "rodikliai": [
+      "zalieji_plotai"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "7.5",
+     "pavadinimas": "Gyvi rajonų centrai – paslaugos arčiau namų",
+     "rodikliai": [
+      "sveikata",
+      "socialines_paslaugos",
+      "kultura"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "8",
+   "pavadinimas": "Prižiūrimas ir skaidriai tvarkomas miestas",
+   "tikslai": [
+    "Kasdien prižiūrimas miestas",
+    "Laiku ir kokybiškai atliekami darbai",
+    "Skaidrūs terminai ir kaštai"
+   ],
+   "skyriai": [
+    {
+     "id": "8.1",
+     "pavadinimas": "Kasdienė miesto priežiūra",
+     "rodikliai": [
+      "zalieji_plotai",
+      "zalieji_plotai_dalis"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "8.2",
+     "pavadinimas": "Infrastruktūros priežiūra ir darbų kokybė",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "8.3",
+     "pavadinimas": "Skaidrios statybos ir viešieji pirkimai",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "8.4",
+     "pavadinimas": "Skaidrus ir aiškus darbų planavimas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "9",
+   "pavadinimas": "Socialiai rūpestingas miestas",
+   "tikslai": [
+    "Užtikrintas gyvenimas namuose ir bendruomenėje",
+    "Savalaikė pagalba prieš krizę",
+    "Paprastesnė ir arčiau žmogaus veikianti socialinių paslaugų sistema"
+   ],
+   "skyriai": [
+    {
+     "id": "9.1",
+     "pavadinimas": "Kaunas – senstančiai visuomenei pasiruošęs miestas",
+     "rodikliai": [
+      "socialines_paslaugos"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "9.2",
+     "pavadinimas": "Miestas, kuriame negalia neriboja savarankiško gyvenimo",
+     "rodikliai": [
+      "socialines_paslaugos"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "9.3",
+     "pavadinimas": "Pagalba šeimai prieš krizę",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "9.4",
+     "pavadinimas": "Būstas – socialinio saugumo pagrindas",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "9.5",
+     "pavadinimas": "Socialinės paslaugos, kurios dirba žmogui",
+     "rodikliai": [
+      "socialines_paslaugos"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  },
+  {
+   "id": "10",
+   "pavadinimas": "Sveikata arčiau žmogaus",
+   "tikslai": [
+    "Patogesnės ir geriau koordinuojamos sveikatos paslaugos",
+    "Daugiau prevencijos, ypač vaikams",
+    "Daugiau slaugos ir ilgalaikės priežiūros arti namų"
+   ],
+   "skyriai": [
+    {
+     "id": "10.1",
+     "pavadinimas": "Sveikatos paslaugų prieinamumas – matuoti ir gerinti tai, ką miestas gali paveikti",
+     "rodikliai": [
+      "sveikata"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "10.2",
+     "pavadinimas": "Sveikesni vaikai – nuosekli prevencija vietoje pavienių akcijų",
+     "rodikliai": [],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    },
+    {
+     "id": "10.3",
+     "pavadinimas": "Slauga ir ilgalaikė priežiūra – kuo arčiau žmogaus",
+     "rodikliai": [
+      "sveikata",
+      "socialines_paslaugos"
+     ],
+     "priskirta_vietoms": [],
+     "vietos_paminetos": [],
+     "pasiulymai": [],
+     "santrauka": null,
+     "nuoroda": null
+    }
+   ]
+  }
+ ]
 }
