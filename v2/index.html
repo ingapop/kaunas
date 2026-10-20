@@ -326,8 +326,12 @@ const cityVal = ind => S.R.miestas[ind]?.reiksme ?? null;
 function breaks(level, ind) {        // quintile class breaks over areas with data
   const vs = S.geo[level].features.map(f => val(level, f.properties.id, ind)).filter(v => v != null).sort((a, b) => a - b);
   if (!vs.length) return [];
-  return [1, 2, 3, 4].map(q => vs[Math.min(vs.length - 1, Math.floor(q * vs.length / 5))]);
+  const qs = [1, 2, 3, 4].map(q => vs[Math.min(vs.length - 1, Math.floor(q * vs.length / 5))]);
+  return [...new Set(qs)].filter(b => b > vs[0]);  // many equal values (e.g. 0) must not all land in the top class
 }
+// Plain counts (tipas „Kiekis“): no per-resident comparison, city value is a total, seniūnija level only.
+const isCount = ind => indMeta(ind)?.tipas === 'Kiekis';
+const indsFor = level => S.R.rodikliai.filter(r => level === 'seniunijos' || !isCount(r.id));
 function colorVar(v, br) {
   if (v == null) return 'var(--nodata)';
   let c = 1; br.forEach(b => { if (v >= b) c++; });
@@ -383,22 +387,26 @@ function wireMap(root) {
 /* ===== shared bits ===== */
 function controls() {
   const lv = Object.entries(LEVELS).map(([k, l]) => `<button type="button" data-level="${k}" aria-pressed="${S.level === k}">${l.many}</button>`).join('');
-  const chips = S.R.rodikliai.map(r => `<button type="button" class="chip" data-ind="${r.id}" aria-pressed="${S.ind === r.id}">${esc(r.pavadinimas)}</button>`).join('');
+  const chips = indsFor(S.level).map(r => `<button type="button" class="chip" data-ind="${r.id}" aria-pressed="${S.ind === r.id}">${esc(r.pavadinimas)}</button>`).join('');
   return `<div class="controls"><div class="seg" role="group" aria-label="Teritorijos">${lv}</div></div><div class="chips" role="group" aria-label="Rodiklis">${chips}</div>`;
 }
 function wireControls(root, rerender) {
-  root.querySelectorAll('[data-level]').forEach(b => b.addEventListener('click', () => { S.level = b.dataset.level; rerender(); }));
+  root.querySelectorAll('[data-level]').forEach(b => b.addEventListener('click', () => {
+    S.level = b.dataset.level;
+    if (!indsFor(S.level).some(r => r.id === S.ind)) S.ind = indsFor(S.level)[0].id;
+    rerender();
+  }));
   root.querySelectorAll('[data-ind]').forEach(b => b.addEventListener('click', () => { S.ind = b.dataset.ind; rerender(); }));
 }
 function rankList(level, ind, limit) {
   const m = indMeta(ind);
   const rows = S.geo[level].features.map(f => ({ p: f.properties, v: val(level, f.properties.id, ind) }))
     .sort((a, b) => (b.v ?? -Infinity) - (a.v ?? -Infinity));
-  const max = Math.max(...rows.map(r => r.v ?? 0), cityVal(ind) ?? 0) || 1;
+  const max = Math.max(...rows.map(r => r.v ?? 0), isCount(ind) ? 0 : cityVal(ind) ?? 0) || 1;
   const shown = limit ? rows.slice(0, limit) : rows;
   const li = shown.map(r => `<li><a href="#/vieta/${areaId(level, r.p.id)}"><span>${esc(r.p.pavadinimas)}</span><span class="bar"><i style="width:${r.v == null ? 0 : (100 * r.v / max).toFixed(1)}%"></i></span><span class="v">${fmt(r.v)}</span></a></li>`).join('');
   const c = cityVal(ind);
-  const city = c == null ? '' : `<li class="city"><div style="display:grid;grid-template-columns:minmax(0,1fr) auto;padding:6px 8px;border-top:1px solid var(--border)"><span>Kauno miestas</span><span class="v">${fmt(c)}</span></div></li>`;
+  const city = c == null ? '' : `<li class="city"><div style="display:grid;grid-template-columns:minmax(0,1fr) auto;padding:6px 8px;border-top:1px solid var(--border)"><span>${isCount(ind) ? 'Kauno miestas, iš viso' : 'Kauno miestas'}</span><span class="v">${fmt(c)}</span></div></li>`;
   return `<ol class="rank">${li}${city}</ol><p class="ind-note">${esc(m.vienetas)} · ${esc(m.saltinis)}</p>`;
 }
 function sectionsForInd(ind) { return S.sections.filter(s => (s.rodikliai || []).includes(ind)); }
@@ -453,13 +461,13 @@ function viewArea(root, key) {
   const parent = level === 'apylinkes' && S.byName[p.seniunija] ? `<a href="#/vieta/s-${S.byName[p.seniunija]}">${esc(p.seniunija)} seniūnija</a>` : '';
   const kids = level === 'seniunijos' ? S.geo.apylinkes.features.filter(a => a.properties.seniunija === p.pavadinimas) : [];
 
-  const rows = S.R.rodikliai.map(m => {
-    const v = val(level, p.id, m.id), c = cityVal(m.id);
+  const rows = indsFor(level).map(m => {
+    const v = val(level, p.id, m.id), c = cityVal(m.id), cs = isCount(m.id) ? null : c;  // a citywide total is no reference point
     const vs = S.geo[level].features.map(x => val(level, x.properties.id, m.id)).filter(x => x != null);
-    const lo = Math.min(...vs, c ?? Infinity), hi = Math.max(...vs, c ?? -Infinity);
+    const lo = Math.min(...vs, cs ?? Infinity), hi = Math.max(...vs, cs ?? -Infinity);
     const pos = x => hi > lo ? (100 * (x - lo) / (hi - lo)).toFixed(1) : 50;
-    const strip = vs.length ? `<div class="strip" aria-hidden="true"><div class="track"></div>${vs.map(x => `<span class="o" style="left:${pos(x)}%"></span>`).join('')}${c != null ? `<span class="city" style="left:${pos(c)}%"></span>` : ''}${v != null ? `<span class="me" style="left:${pos(v)}%"></span>` : ''}</div>` : '';
-    return `<div class="ind-row"><div class="ind-head"><a href="#/" data-goind="${m.id}">${esc(m.pavadinimas)}</a><span class="val">${fmt(v)} <span class="muted">· miestas ${fmt(c)}</span></span></div>${strip}<div class="ind-note">${esc(m.vienetas)}</div></div>`;
+    const strip = vs.length ? `<div class="strip" aria-hidden="true"><div class="track"></div>${vs.map(x => `<span class="o" style="left:${pos(x)}%"></span>`).join('')}${cs != null ? `<span class="city" style="left:${pos(cs)}%"></span>` : ''}${v != null ? `<span class="me" style="left:${pos(v)}%"></span>` : ''}</div>` : '';
+    return `<div class="ind-row"><div class="ind-head"><a href="#/" data-goind="${m.id}">${esc(m.pavadinimas)}</a><span class="val">${fmt(v)} <span class="muted">· ${isCount(m.id) ? 'iš viso mieste' : 'miestas'} ${fmt(c)}</span></span></div>${strip}<div class="ind-note">${esc(m.vienetas)}</div></div>`;
   }).join('');
 
   // „Ką siūlome čia“: hand-assigned first, then automatic from weak indicators.
