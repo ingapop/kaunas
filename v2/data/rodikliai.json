@@ -1,22 +1,26 @@
 {
  "sugeneruota": "2026-10-20",
- "busena": "TIKRINAMA",
+ "busena": "PARENGTA",
  "rodikliai": [
   {
    "id": "vaikai",
+   "tipas": "Tenka 1 000 vaikų",
+   "skaiciavimas": "darželių ir mokyklų skaičius ÷ 0–14 m. vaikų skaičius × 1 000",
    "pavadinimas": "Darželiai ir mokyklos",
    "vienetas": "įstaigų 1 000 vaikų (0–14 m.)",
    "aprasymas": "Kiek ikimokyklinį ugdymą teikiančių įstaigų ir bendrojo ugdymo mokyklų tenka 1 000 vaikų (0–14 m.).",
    "kryptis": "daugiau",
    "saltinis": "Švietimo ir mokslo institucijų registras (ŠMIR); 2021 m. gyventojų ir būstų surašymas, 100 m gardelė (Valstybės duomenų agentūra)",
    "data": "ŠMIR 2022-08-30; gyventojai 2021-01-01",
-   "faktai": "F-069",
+   "faktai": "F-080",
    "skaitiklis": "skirtingos ikimokyklinio ugdymo įstaigos ir bendrojo ugdymo mokyklos (F-064 taisyklė)",
    "vardiklis": "0–14 m. gyventojai, 2021",
    "slenkstis": "vaikų < 250"
   },
   {
    "id": "sveikata",
+   "tipas": "Tenka 10 000 gyventojų",
+   "skaiciavimas": "sveikatos priežiūros įstaigų ir vaistinių skaičius ÷ gyventojų skaičius × 10 000",
    "pavadinimas": "Sveikatos įstaigos ir vaistinės",
    "vienetas": "objektų 10 000 gyventojų",
    "aprasymas": "Kiek OpenStreetMap pažymėtų sveikatos priežiūros įstaigų ir vaistinių tenka 10 000 gyventojų.",
@@ -26,10 +30,12 @@
    "faktai": "F-070",
    "skaitiklis": "klinikos, ligoninės, gydytojų kabinetai, odontologijos ir kitos healthcare=* vietos, vaistinės",
    "vardiklis": "gyventojai, 2021",
-   "slenkstis": "gyventojų < 1500"
+   "slenkstis": "gyventojų < 1 500"
   },
   {
    "id": "socialines_paslaugos",
+   "tipas": "Kiekis",
+   "skaiciavimas": "socialinių paslaugų vietų skaičius teritorijoje (iš gyventojų skaičiaus nedalijama)",
    "pavadinimas": "Socialinių paslaugų vietos",
    "vienetas": "vietų skaičius",
    "aprasymas": "Kiek Kauno miesto socialinių paslaugų centro padalinių ir paslaugų vietų yra teritorijoje. Dalis jų aptarnauja visą miestą.",
@@ -43,6 +49,8 @@
   },
   {
    "id": "zalieji_plotai",
+   "tipas": "Tenka vienam gyventojui",
+   "skaiciavimas": "žaliųjų plotų plotas (m²) ÷ gyventojų skaičius",
    "pavadinimas": "Žalieji plotai",
    "vienetas": "m² vienam gyventojui",
    "aprasymas": "Kiek parkų, miškų, pievų ir kitų žaliųjų plotų tenka vienam gyventojui (persidengiantys plotai skaičiuojami vieną kartą).",
@@ -52,10 +60,12 @@
    "faktai": "F-072",
    "skaitiklis": "žaliųjų plotų sąjunga, apkirpta pagal ribas (ha)",
    "vardiklis": "gyventojai, 2021",
-   "slenkstis": "gyventojų < 1500"
+   "slenkstis": "gyventojų < 1 500"
   },
   {
    "id": "zalieji_plotai_dalis",
+   "tipas": "Teritorijos dalis",
+   "skaiciavimas": "žaliųjų plotų užimamas plotas ÷ visas teritorijos plotas × 100",
    "pavadinimas": "Žaliųjų plotų dalis",
    "vienetas": "proc. teritorijos",
    "aprasymas": "Kokią teritorijos dalį užima žalieji plotai.",
@@ -69,6 +79,8 @@
   },
   {
    "id": "pesciuju_takai",
+   "tipas": "Santykis",
+   "skaiciavimas": "pėsčiųjų ir dviračių takų ilgis (km) ÷ vietinių gatvių ilgis (km)",
    "pavadinimas": "Pėsčiųjų ir dviračių takai",
    "vienetas": "takų km vienam gatvių km",
    "aprasymas": "Kiek kilometrų atskirai pažymėtų pėsčiųjų ir dviračių takų tenka vienam vietinių gatvių kilometrui.",
@@ -82,6 +94,8 @@
   },
   {
    "id": "renovacija",
+   "tipas": "Daugiabučių dalis",
+   "skaiciavimas": "renovuotų daugiabučių skaičius ÷ APVA atrinktų daugiabučių skaičius × 100",
    "pavadinimas": "Renovuoti daugiabučiai",
    "vienetas": "proc. APVA atrinktų daugiabučių",
    "aprasymas": "Kokia dalis daugiabučių, kuriuos Aplinkos projektų valdymo agentūra (APVA) laiko galinčiais dalyvauti atnaujinimo programose, jau renovuota.",
@@ -95,6 +109,8 @@
   },
   {
    "id": "renovacija_pradeta",
+   "tipas": "Daugiabučių dalis",
+   "skaiciavimas": "renovuotų ir renovuojamų daugiabučių skaičius ÷ APVA atrinktų daugiabučių skaičius × 100",
    "pavadinimas": "Renovuoti ir renovuojami daugiabučiai",
    "vienetas": "proc. APVA atrinktų daugiabučių",
    "aprasymas": "Kokia dalis APVA atrinktų daugiabučių jau renovuota arba turi suderintą investicijų planą.",
@@ -108,6 +124,8 @@
   },
   {
    "id": "sportas",
+   "tipas": "Tenka 10 000 gyventojų",
+   "skaiciavimas": "sporto vietų skaičius ÷ gyventojų skaičius × 10 000",
    "pavadinimas": "Sporto vietos",
    "vienetas": "vietų 10 000 gyventojų",
    "aprasymas": "Kiek OpenStreetMap pažymėtų viešai prieinamų sporto centrų, salių, stadionų ir lauko aikštynų tenka 10 000 gyventojų.",
@@ -117,56 +135,64 @@
    "faktai": "F-076",
    "skaitiklis": "leisure=sports_centre|sports_hall|stadium|pitch|track|fitness_station (be access=private|customers)",
    "vardiklis": "gyventojai, 2021",
-   "slenkstis": "gyventojų < 1500"
+   "slenkstis": "gyventojų < 1 500"
   },
   {
    "id": "zaidimu_aiksteles",
+   "tipas": "Tenka 1 000 vaikų",
+   "skaiciavimas": "žaidimų aikštelių skaičius ÷ 0–14 m. vaikų skaičius × 1 000",
    "pavadinimas": "Vaikų žaidimų aikštelės",
    "vienetas": "aikštelių 1 000 vaikų (0–14 m.)",
    "aprasymas": "Kiek OpenStreetMap pažymėtų viešų vaikų žaidimų aikštelių tenka 1 000 vaikų (0–14 m.).",
    "kryptis": "daugiau",
    "saltinis": "OpenStreetMap; 2021 m. gyventojų ir būstų surašymas, 100 m gardelė (Valstybės duomenų agentūra)",
    "data": "OpenStreetMap duomenų būklė 2026-10-19",
-   "faktai": "F-077",
+   "faktai": "F-081",
    "skaitiklis": "leisure=playground (be access=private|customers)",
    "vardiklis": "0–14 m. gyventojai, 2021",
    "slenkstis": "vaikų < 250"
   },
   {
    "id": "vaiku_dalis",
+   "tipas": "Gyventojų dalis",
+   "skaiciavimas": "0–14 m. vaikų skaičius ÷ visų gyventojų skaičius × 100",
    "pavadinimas": "Vaikų dalis",
    "vienetas": "proc. gyventojų",
    "aprasymas": "Kokią gyventojų dalį 2021 m. sudarė 0–14 metų vaikai.",
    "kryptis": "kontekstas",
    "saltinis": "2021 m. gyventojų ir būstų surašymas, 100 m gardelė (Valstybės duomenų agentūra)",
    "data": "2021-01-01",
-   "faktai": "F-067",
+   "faktai": "F-079",
    "skaitiklis": "0–14 m. gyventojai",
    "vardiklis": "visi gyventojai",
-   "slenkstis": "gyventojų < 1500"
+   "slenkstis": "gyventojų < 1 500"
   },
   {
    "id": "senjoru_dalis",
+   "tipas": "Gyventojų dalis",
+   "skaiciavimas": "65 m. ir vyresnių gyventojų skaičius ÷ visų gyventojų skaičius × 100",
    "pavadinimas": "Vyresnio amžiaus gyventojų dalis",
    "vienetas": "proc. gyventojų",
    "aprasymas": "Kokią gyventojų dalį 2021 m. sudarė 65 metų ir vyresni žmonės.",
    "kryptis": "kontekstas",
    "saltinis": "2021 m. gyventojų ir būstų surašymas, 100 m gardelė (Valstybės duomenų agentūra)",
    "data": "2021-01-01",
-   "faktai": "F-067",
+   "faktai": "F-079",
    "skaitiklis": "65+ m. gyventojai",
    "vardiklis": "visi gyventojai",
-   "slenkstis": "gyventojų < 1500"
+   "slenkstis": "gyventojų < 1 500"
   },
   {
    "id": "tankis",
+   "tipas": "Tenka 1 km²",
+   "skaiciavimas": "gyventojų skaičius ÷ teritorijos plotas (km²)",
    "pavadinimas": "Gyventojų tankis",
    "vienetas": "gyv./km²",
    "aprasymas": "Kiek gyventojų tenka vienam kvadratiniam kilometrui (2021 m.).",
    "kryptis": "kontekstas",
    "saltinis": "2021 m. gyventojų ir būstų surašymas, 100 m gardelė (Valstybės duomenų agentūra)",
    "data": "2021-01-01",
-   "faktai": null
+   "faktai": "F-082"
   }
  ],
  "reiksmes": {
@@ -177,15 +203,15 @@
      "kiekis": 21178
     },
     "vaiku_dalis": {
-     "reiksme": 19.8,
-     "kiekis": 4194
+     "reiksme": 17.7,
+     "kiekis": 3746
     },
     "senjoru_dalis": {
-     "reiksme": 18.8,
-     "kiekis": 3986
+     "reiksme": 17.4,
+     "kiekis": 3693
     },
     "vaikai": {
-     "reiksme": 2.86,
+     "reiksme": 3.2,
      "kiekis": 12
     },
     "sveikata": {
@@ -221,7 +247,7 @@
      "kiekis": 27
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.91,
+     "reiksme": 2.14,
      "kiekis": 8
     }
    },
@@ -231,15 +257,15 @@
      "kiekis": 36435
     },
     "vaiku_dalis": {
-     "reiksme": 15.5,
-     "kiekis": 5643
+     "reiksme": 14.8,
+     "kiekis": 5381
     },
     "senjoru_dalis": {
-     "reiksme": 22.0,
-     "kiekis": 8002
+     "reiksme": 22.1,
+     "kiekis": 8037
     },
     "vaikai": {
-     "reiksme": 8.15,
+     "reiksme": 8.55,
      "kiekis": 46
     },
     "sveikata": {
@@ -275,7 +301,7 @@
      "kiekis": 91
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.13,
+     "reiksme": 2.23,
      "kiekis": 12
     }
    },
@@ -286,11 +312,11 @@
     },
     "vaiku_dalis": {
      "reiksme": 14.1,
-     "kiekis": 7326
+     "kiekis": 7310
     },
     "senjoru_dalis": {
      "reiksme": 23.6,
-     "kiekis": 12219
+     "kiekis": 12208
     },
     "vaikai": {
      "reiksme": 2.87,
@@ -329,7 +355,7 @@
      "kiekis": 74
     },
     "zaidimu_aiksteles": {
-     "reiksme": 5.6,
+     "reiksme": 5.61,
      "kiekis": 41
     }
    },
@@ -339,15 +365,15 @@
      "kiekis": 38546
     },
     "vaiku_dalis": {
-     "reiksme": 15.2,
-     "kiekis": 5856
+     "reiksme": 15.1,
+     "kiekis": 5814
     },
     "senjoru_dalis": {
-     "reiksme": 26.8,
-     "kiekis": 10315
+     "reiksme": 26.6,
+     "kiekis": 10247
     },
     "vaikai": {
-     "reiksme": 3.59,
+     "reiksme": 3.61,
      "kiekis": 21
     },
     "sveikata": {
@@ -383,7 +409,7 @@
      "kiekis": 77
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.9,
+     "reiksme": 2.92,
      "kiekis": 17
     }
    },
@@ -393,15 +419,15 @@
      "kiekis": 34764
     },
     "vaiku_dalis": {
-     "reiksme": 17.0,
-     "kiekis": 5901
+     "reiksme": 15.4,
+     "kiekis": 5338
     },
     "senjoru_dalis": {
-     "reiksme": 20.8,
-     "kiekis": 7218
+     "reiksme": 19.9,
+     "kiekis": 6916
     },
     "vaikai": {
-     "reiksme": 3.56,
+     "reiksme": 3.93,
      "kiekis": 21
     },
     "sveikata": {
@@ -437,7 +463,7 @@
      "kiekis": 46
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.37,
+     "reiksme": 2.62,
      "kiekis": 14
     }
    },
@@ -447,15 +473,15 @@
      "kiekis": 38904
     },
     "vaiku_dalis": {
-     "reiksme": 14.7,
-     "kiekis": 5708
+     "reiksme": 14.1,
+     "kiekis": 5467
     },
     "senjoru_dalis": {
-     "reiksme": 22.6,
-     "kiekis": 8785
+     "reiksme": 22.1,
+     "kiekis": 8601
     },
     "vaikai": {
-     "reiksme": 5.26,
+     "reiksme": 5.49,
      "kiekis": 30
     },
     "sveikata": {
@@ -491,25 +517,25 @@
      "kiekis": 78
     },
     "zaidimu_aiksteles": {
-     "reiksme": 4.38,
+     "reiksme": 4.57,
      "kiekis": 25
     }
    },
    "1910": {
     "tankis": {
      "reiksme": 1758,
-     "kiekis": 25179
+     "kiekis": 25178
     },
     "vaiku_dalis": {
-     "reiksme": 15.2,
-     "kiekis": 3836
+     "reiksme": 14.3,
+     "kiekis": 3600
     },
     "senjoru_dalis": {
-     "reiksme": 21.2,
-     "kiekis": 5336
+     "reiksme": 21.1,
+     "kiekis": 5323
     },
     "vaikai": {
-     "reiksme": 2.61,
+     "reiksme": 2.78,
      "kiekis": 10
     },
     "sveikata": {
@@ -545,7 +571,7 @@
      "kiekis": 42
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.56,
+     "reiksme": 1.67,
      "kiekis": 6
     }
    },
@@ -555,15 +581,15 @@
      "kiekis": 55239
     },
     "vaiku_dalis": {
-     "reiksme": 18.9,
-     "kiekis": 10445
+     "reiksme": 18.5,
+     "kiekis": 10201
     },
     "senjoru_dalis": {
-     "reiksme": 16.8,
-     "kiekis": 9285
+     "reiksme": 16.0,
+     "kiekis": 8832
     },
     "vaikai": {
-     "reiksme": 2.68,
+     "reiksme": 2.74,
      "kiekis": 28
     },
     "sveikata": {
@@ -599,7 +625,7 @@
      "kiekis": 59
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.78,
+     "reiksme": 2.84,
      "kiekis": 29
     }
    },
@@ -610,11 +636,11 @@
     },
     "vaiku_dalis": {
      "reiksme": null,
-     "kiekis": 204
+     "kiekis": 180
     },
     "senjoru_dalis": {
      "reiksme": null,
-     "kiekis": 298
+     "kiekis": 244
     },
     "vaikai": {
      "reiksme": null,
@@ -661,16 +687,16 @@
   "apylinkes": {
    "716958": {
     "tankis": {
-     "reiksme": 4327,
+     "reiksme": 4329,
      "kiekis": 1376
     },
     "vaiku_dalis": {
      "reiksme": null,
-     "kiekis": 195
+     "kiekis": 190
     },
     "senjoru_dalis": {
      "reiksme": null,
-     "kiekis": 331
+     "kiekis": 333
     },
     "vaikai": {
      "reiksme": null,
@@ -715,19 +741,19 @@
    },
    "716704": {
     "tankis": {
-     "reiksme": 5951,
+     "reiksme": 5947,
      "kiekis": 3059
     },
     "vaiku_dalis": {
-     "reiksme": 13.6,
-     "kiekis": 416
+     "reiksme": 13.1,
+     "kiekis": 400
     },
     "senjoru_dalis": {
-     "reiksme": 24.0,
-     "kiekis": 735
+     "reiksme": 24.3,
+     "kiekis": 744
     },
     "vaikai": {
-     "reiksme": 7.21,
+     "reiksme": 7.5,
      "kiekis": 3
     },
     "sveikata": {
@@ -763,22 +789,22 @@
      "kiekis": 4
     },
     "zaidimu_aiksteles": {
-     "reiksme": 4.81,
+     "reiksme": 5,
      "kiekis": 2
     }
    },
    "716960": {
     "tankis": {
-     "reiksme": 6687,
+     "reiksme": 6686,
      "kiekis": 4139
     },
     "vaiku_dalis": {
      "reiksme": 14.0,
-     "kiekis": 580
+     "kiekis": 578
     },
     "senjoru_dalis": {
      "reiksme": 22.9,
-     "kiekis": 947
+     "kiekis": 946
     },
     "vaikai": {
      "reiksme": 0,
@@ -817,25 +843,25 @@
      "kiekis": 5
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.72,
+     "reiksme": 1.73,
      "kiekis": 1
     }
    },
    "716962": {
     "tankis": {
-     "reiksme": 4348,
+     "reiksme": 4349,
      "kiekis": 3535
     },
     "vaiku_dalis": {
-     "reiksme": 14.1,
-     "kiekis": 498
+     "reiksme": 13.2,
+     "kiekis": 465
     },
     "senjoru_dalis": {
-     "reiksme": 22.6,
-     "kiekis": 799
+     "reiksme": 22.9,
+     "kiekis": 809
     },
     "vaikai": {
-     "reiksme": 4.02,
+     "reiksme": 4.3,
      "kiekis": 2
     },
     "sveikata": {
@@ -871,7 +897,7 @@
      "kiekis": 2
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.01,
+     "reiksme": 2.15,
      "kiekis": 1
     }
    },
@@ -881,12 +907,12 @@
      "kiekis": 1727
     },
     "vaiku_dalis": {
-     "reiksme": 14.1,
-     "kiekis": 244
+     "reiksme": 12.6,
+     "kiekis": 218
     },
     "senjoru_dalis": {
-     "reiksme": 20.2,
-     "kiekis": 349
+     "reiksme": 20.7,
+     "kiekis": 357
     },
     "vaikai": {
      "reiksme": null,
@@ -935,15 +961,15 @@
      "kiekis": 5457
     },
     "vaiku_dalis": {
-     "reiksme": 16.6,
-     "kiekis": 908
+     "reiksme": 16.1,
+     "kiekis": 880
     },
     "senjoru_dalis": {
-     "reiksme": 18.6,
-     "kiekis": 1016
+     "reiksme": 17.7,
+     "kiekis": 967
     },
     "vaikai": {
-     "reiksme": 2.2,
+     "reiksme": 2.27,
      "kiekis": 2
     },
     "sveikata": {
@@ -989,15 +1015,15 @@
      "kiekis": 3036
     },
     "vaiku_dalis": {
-     "reiksme": 18.0,
-     "kiekis": 545
+     "reiksme": 14.7,
+     "kiekis": 446
     },
     "senjoru_dalis": {
-     "reiksme": 20.3,
-     "kiekis": 616
+     "reiksme": 20.5,
+     "kiekis": 621
     },
     "vaikai": {
-     "reiksme": 3.67,
+     "reiksme": 4.48,
      "kiekis": 2
     },
     "sveikata": {
@@ -1033,7 +1059,7 @@
      "kiekis": 11
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.83,
+     "reiksme": 2.24,
      "kiekis": 1
     }
    },
@@ -1043,12 +1069,12 @@
      "kiekis": 4641
     },
     "vaiku_dalis": {
-     "reiksme": 23.9,
-     "kiekis": 1111
+     "reiksme": 24.5,
+     "kiekis": 1138
     },
     "senjoru_dalis": {
-     "reiksme": 10.5,
-     "kiekis": 488
+     "reiksme": 8.2,
+     "kiekis": 382
     },
     "vaikai": {
      "reiksme": 0,
@@ -1087,7 +1113,7 @@
      "kiekis": 4
     },
     "zaidimu_aiksteles": {
-     "reiksme": 0.9,
+     "reiksme": 0.88,
      "kiekis": 1
     }
    },
@@ -1097,12 +1123,12 @@
      "kiekis": 2874
     },
     "vaiku_dalis": {
-     "reiksme": 19.0,
-     "kiekis": 547
+     "reiksme": 18.5,
+     "kiekis": 533
     },
     "senjoru_dalis": {
-     "reiksme": 11.8,
-     "kiekis": 339
+     "reiksme": 11.3,
+     "kiekis": 324
     },
     "vaikai": {
      "reiksme": 0,
@@ -1141,7 +1167,7 @@
      "kiekis": 0
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.83,
+     "reiksme": 1.88,
      "kiekis": 1
     }
    },
@@ -1151,15 +1177,15 @@
      "kiekis": 2871
     },
     "vaiku_dalis": {
-     "reiksme": 30.4,
-     "kiekis": 873
+     "reiksme": 29.7,
+     "kiekis": 853
     },
     "senjoru_dalis": {
-     "reiksme": 6.8,
-     "kiekis": 195
+     "reiksme": 3.4,
+     "kiekis": 99
     },
     "vaikai": {
-     "reiksme": 1.15,
+     "reiksme": 1.17,
      "kiekis": 1
     },
     "sveikata": {
@@ -1195,7 +1221,7 @@
      "kiekis": 1
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.29,
+     "reiksme": 2.34,
      "kiekis": 2
     }
    },
@@ -1205,15 +1231,15 @@
      "kiekis": 4925
     },
     "vaiku_dalis": {
-     "reiksme": 16.5,
-     "kiekis": 812
+     "reiksme": 14.8,
+     "kiekis": 727
     },
     "senjoru_dalis": {
-     "reiksme": 22.4,
-     "kiekis": 1102
+     "reiksme": 20.9,
+     "kiekis": 1027
     },
     "vaikai": {
-     "reiksme": 6.16,
+     "reiksme": 6.88,
      "kiekis": 5
     },
     "sveikata": {
@@ -1249,7 +1275,7 @@
      "kiekis": 13
     },
     "zaidimu_aiksteles": {
-     "reiksme": 4.93,
+     "reiksme": 5.5,
      "kiekis": 4
     }
    },
@@ -1259,15 +1285,15 @@
      "kiekis": 2800
     },
     "vaiku_dalis": {
-     "reiksme": 26.4,
-     "kiekis": 738
+     "reiksme": 24.0,
+     "kiekis": 671
     },
     "senjoru_dalis": {
-     "reiksme": 15.4,
-     "kiekis": 432
+     "reiksme": 11.5,
+     "kiekis": 323
     },
     "vaikai": {
-     "reiksme": 2.71,
+     "reiksme": 2.98,
      "kiekis": 2
     },
     "sveikata": {
@@ -1309,19 +1335,19 @@
    },
    "714752": {
     "tankis": {
-     "reiksme": 3112,
+     "reiksme": 3111,
      "kiekis": 3100
     },
     "vaiku_dalis": {
-     "reiksme": 16.1,
-     "kiekis": 499
+     "reiksme": 16.3,
+     "kiekis": 504
     },
     "senjoru_dalis": {
-     "reiksme": 18.3,
-     "kiekis": 567
+     "reiksme": 17.9,
+     "kiekis": 554
     },
     "vaikai": {
-     "reiksme": 20.04,
+     "reiksme": 19.84,
      "kiekis": 10
     },
     "sveikata": {
@@ -1357,25 +1383,25 @@
      "kiekis": 15
     },
     "zaidimu_aiksteles": {
-     "reiksme": 4.01,
+     "reiksme": 3.97,
      "kiekis": 2
     }
    },
    "717180": {
     "tankis": {
-     "reiksme": 3447,
+     "reiksme": 3446,
      "kiekis": 1541
     },
     "vaiku_dalis": {
-     "reiksme": 16.8,
-     "kiekis": 259
+     "reiksme": 16.4,
+     "kiekis": 252
     },
     "senjoru_dalis": {
-     "reiksme": 19.2,
-     "kiekis": 296
+     "reiksme": 19.1,
+     "kiekis": 295
     },
     "vaikai": {
-     "reiksme": 11.58,
+     "reiksme": 11.9,
      "kiekis": 3
     },
     "sveikata": {
@@ -1417,16 +1443,16 @@
    },
    "716976": {
     "tankis": {
-     "reiksme": 3358,
+     "reiksme": 3356,
      "kiekis": 947
     },
     "vaiku_dalis": {
      "reiksme": null,
-     "kiekis": 151
+     "kiekis": 145
     },
     "senjoru_dalis": {
      "reiksme": null,
-     "kiekis": 217
+     "kiekis": 212
     },
     "vaikai": {
      "reiksme": null,
@@ -1475,15 +1501,15 @@
      "kiekis": 2450
     },
     "vaiku_dalis": {
-     "reiksme": 11.9,
-     "kiekis": 291
+     "reiksme": 11.4,
+     "kiekis": 280
     },
     "senjoru_dalis": {
-     "reiksme": 29.4,
-     "kiekis": 720
+     "reiksme": 29.6,
+     "kiekis": 726
     },
     "vaikai": {
-     "reiksme": 3.44,
+     "reiksme": 3.57,
      "kiekis": 1
     },
     "sveikata": {
@@ -1519,25 +1545,25 @@
      "kiekis": 13
     },
     "zaidimu_aiksteles": {
-     "reiksme": 3.44,
+     "reiksme": 3.57,
      "kiekis": 1
     }
    },
    "716980": {
     "tankis": {
-     "reiksme": 4575,
+     "reiksme": 4569,
      "kiekis": 1743
     },
     "vaiku_dalis": {
-     "reiksme": 14.5,
-     "kiekis": 253
+     "reiksme": 13.3,
+     "kiekis": 232
     },
     "senjoru_dalis": {
-     "reiksme": 25.4,
-     "kiekis": 442
+     "reiksme": 25.7,
+     "kiekis": 448
     },
     "vaikai": {
-     "reiksme": 3.95,
+     "reiksme": null,
      "kiekis": 1
     },
     "sveikata": {
@@ -1573,25 +1599,25 @@
      "kiekis": 1
     },
     "zaidimu_aiksteles": {
-     "reiksme": 0,
+     "reiksme": null,
      "kiekis": 0
     }
    },
    "716982": {
     "tankis": {
-     "reiksme": 3999,
+     "reiksme": 4001,
      "kiekis": 2839
     },
     "vaiku_dalis": {
-     "reiksme": 14.7,
-     "kiekis": 418
+     "reiksme": 14.6,
+     "kiekis": 415
     },
     "senjoru_dalis": {
-     "reiksme": 22.5,
-     "kiekis": 639
+     "reiksme": 22.3,
+     "kiekis": 634
     },
     "vaikai": {
-     "reiksme": 9.57,
+     "reiksme": 9.64,
      "kiekis": 4
     },
     "sveikata": {
@@ -1627,7 +1653,7 @@
      "kiekis": 5
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.39,
+     "reiksme": 2.41,
      "kiekis": 1
     }
    },
@@ -1637,15 +1663,15 @@
      "kiekis": 4403
     },
     "vaiku_dalis": {
-     "reiksme": 14.7,
-     "kiekis": 646
+     "reiksme": 14.4,
+     "kiekis": 632
     },
     "senjoru_dalis": {
-     "reiksme": 20.6,
-     "kiekis": 908
+     "reiksme": 20.8,
+     "kiekis": 914
     },
     "vaikai": {
-     "reiksme": 9.29,
+     "reiksme": 9.49,
      "kiekis": 6
     },
     "sveikata": {
@@ -1681,7 +1707,7 @@
      "kiekis": 15
     },
     "zaidimu_aiksteles": {
-     "reiksme": 3.1,
+     "reiksme": 3.16,
      "kiekis": 2
     }
    },
@@ -1691,15 +1717,15 @@
      "kiekis": 3842
     },
     "vaiku_dalis": {
-     "reiksme": 15.5,
-     "kiekis": 597
+     "reiksme": 15.1,
+     "kiekis": 581
     },
     "senjoru_dalis": {
      "reiksme": 22.9,
-     "kiekis": 878
+     "kiekis": 880
     },
     "vaikai": {
-     "reiksme": 10.05,
+     "reiksme": 10.33,
      "kiekis": 6
     },
     "sveikata": {
@@ -1741,16 +1767,16 @@
    },
    "716992": {
     "tankis": {
-     "reiksme": 955,
+     "reiksme": 954,
      "kiekis": 694
     },
     "vaiku_dalis": {
      "reiksme": null,
-     "kiekis": 117
+     "kiekis": 108
     },
     "senjoru_dalis": {
      "reiksme": null,
-     "kiekis": 159
+     "kiekis": 155
     },
     "vaikai": {
      "reiksme": null,
@@ -1795,19 +1821,19 @@
    },
    "715400": {
     "tankis": {
-     "reiksme": 3461,
+     "reiksme": 3463,
      "kiekis": 3198
     },
     "vaiku_dalis": {
-     "reiksme": 14.0,
-     "kiekis": 448
+     "reiksme": 13.3,
+     "kiekis": 425
     },
     "senjoru_dalis": {
-     "reiksme": 24.1,
-     "kiekis": 772
+     "reiksme": 24.5,
+     "kiekis": 782
     },
     "vaikai": {
-     "reiksme": 4.46,
+     "reiksme": 4.71,
      "kiekis": 2
     },
     "sveikata": {
@@ -1843,7 +1869,7 @@
      "kiekis": 1
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.23,
+     "reiksme": 2.35,
      "kiekis": 1
     }
    },
@@ -1853,15 +1879,15 @@
      "kiekis": 3023
     },
     "vaiku_dalis": {
-     "reiksme": 16.0,
-     "kiekis": 484
+     "reiksme": 14.4,
+     "kiekis": 434
     },
     "senjoru_dalis": {
-     "reiksme": 23.3,
-     "kiekis": 703
+     "reiksme": 23.8,
+     "kiekis": 718
     },
     "vaikai": {
-     "reiksme": 6.2,
+     "reiksme": 6.91,
      "kiekis": 3
     },
     "sveikata": {
@@ -1903,19 +1929,19 @@
    },
    "717040": {
     "tankis": {
-     "reiksme": 7741,
+     "reiksme": 7738,
      "kiekis": 4242
     },
     "vaiku_dalis": {
-     "reiksme": 13.7,
-     "kiekis": 582
+     "reiksme": 13.6,
+     "kiekis": 577
     },
     "senjoru_dalis": {
-     "reiksme": 24.2,
-     "kiekis": 1028
+     "reiksme": 24.0,
+     "kiekis": 1019
     },
     "vaikai": {
-     "reiksme": 5.15,
+     "reiksme": 5.2,
      "kiekis": 3
     },
     "sveikata": {
@@ -1951,25 +1977,25 @@
      "kiekis": 4
     },
     "zaidimu_aiksteles": {
-     "reiksme": 3.44,
+     "reiksme": 3.47,
      "kiekis": 2
     }
    },
    "717042": {
     "tankis": {
-     "reiksme": 2799,
+     "reiksme": 2800,
      "kiekis": 6497
     },
     "vaiku_dalis": {
-     "reiksme": 16.0,
-     "kiekis": 1038
+     "reiksme": 15.0,
+     "kiekis": 977
     },
     "senjoru_dalis": {
-     "reiksme": 23.0,
-     "kiekis": 1493
+     "reiksme": 23.2,
+     "kiekis": 1505
     },
     "vaikai": {
-     "reiksme": 3.85,
+     "reiksme": 4.09,
      "kiekis": 4
     },
     "sveikata": {
@@ -2005,25 +2031,25 @@
      "kiekis": 45
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.89,
+     "reiksme": 3.07,
      "kiekis": 3
     }
    },
    "717002": {
     "tankis": {
-     "reiksme": 5016,
+     "reiksme": 5015,
      "kiekis": 4128
     },
     "vaiku_dalis": {
-     "reiksme": 14.9,
-     "kiekis": 614
+     "reiksme": 14.5,
+     "kiekis": 598
     },
     "senjoru_dalis": {
-     "reiksme": 22.6,
-     "kiekis": 933
+     "reiksme": 22.5,
+     "kiekis": 927
     },
     "vaikai": {
-     "reiksme": 3.26,
+     "reiksme": 3.34,
      "kiekis": 2
     },
     "sveikata": {
@@ -2059,22 +2085,22 @@
      "kiekis": 3
     },
     "zaidimu_aiksteles": {
-     "reiksme": 3.26,
+     "reiksme": 3.34,
      "kiekis": 2
     }
    },
    "714754": {
     "tankis": {
-     "reiksme": 3977,
+     "reiksme": 3976,
      "kiekis": 3579
     },
     "vaiku_dalis": {
-     "reiksme": 15.1,
-     "kiekis": 541
+     "reiksme": 14.5,
+     "kiekis": 519
     },
     "senjoru_dalis": {
-     "reiksme": 21.7,
-     "kiekis": 775
+     "reiksme": 21.8,
+     "kiekis": 779
     },
     "vaikai": {
      "reiksme": 0,
@@ -2124,11 +2150,11 @@
     },
     "vaiku_dalis": {
      "reiksme": null,
-     "kiekis": 237
+     "kiekis": 189
     },
     "senjoru_dalis": {
      "reiksme": null,
-     "kiekis": 228
+     "kiekis": 209
     },
     "vaikai": {
      "reiksme": null,
@@ -2173,19 +2199,19 @@
    },
    "717036": {
     "tankis": {
-     "reiksme": 4376,
+     "reiksme": 4374,
      "kiekis": 3724
     },
     "vaiku_dalis": {
-     "reiksme": 15.3,
-     "kiekis": 570
+     "reiksme": 14.0,
+     "kiekis": 520
     },
     "senjoru_dalis": {
-     "reiksme": 17.0,
-     "kiekis": 634
+     "reiksme": 17.8,
+     "kiekis": 662
     },
     "vaikai": {
-     "reiksme": 7.02,
+     "reiksme": 7.69,
      "kiekis": 4
     },
     "sveikata": {
@@ -2221,25 +2247,25 @@
      "kiekis": 7
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.75,
+     "reiksme": 1.92,
      "kiekis": 1
     }
    },
    "717038": {
     "tankis": {
-     "reiksme": 8016,
+     "reiksme": 8020,
      "kiekis": 5379
     },
     "vaiku_dalis": {
-     "reiksme": 16.7,
-     "kiekis": 896
+     "reiksme": 16.5,
+     "kiekis": 889
     },
     "senjoru_dalis": {
-     "reiksme": 25.8,
-     "kiekis": 1386
+     "reiksme": 25.6,
+     "kiekis": 1377
     },
     "vaikai": {
-     "reiksme": 3.35,
+     "reiksme": 3.37,
      "kiekis": 3
     },
     "sveikata": {
@@ -2281,19 +2307,19 @@
    },
    "714826": {
     "tankis": {
-     "reiksme": 5310,
+     "reiksme": 5308,
      "kiekis": 2788
     },
     "vaiku_dalis": {
-     "reiksme": 15.0,
-     "kiekis": 417
+     "reiksme": 14.9,
+     "kiekis": 416
     },
     "senjoru_dalis": {
      "reiksme": 21.0,
      "kiekis": 586
     },
     "vaikai": {
-     "reiksme": 7.19,
+     "reiksme": 7.21,
      "kiekis": 3
     },
     "sveikata": {
@@ -2329,7 +2355,7 @@
      "kiekis": 6
     },
     "zaidimu_aiksteles": {
-     "reiksme": 26.38,
+     "reiksme": 26.44,
      "kiekis": 11
     }
    },
@@ -2339,15 +2365,15 @@
      "kiekis": 3244
     },
     "vaiku_dalis": {
-     "reiksme": 16.0,
-     "kiekis": 520
+     "reiksme": 15.0,
+     "kiekis": 488
     },
     "senjoru_dalis": {
-     "reiksme": 25.0,
-     "kiekis": 811
+     "reiksme": 23.7,
+     "kiekis": 770
     },
     "vaikai": {
-     "reiksme": 3.85,
+     "reiksme": 4.1,
      "kiekis": 2
     },
     "sveikata": {
@@ -2383,13 +2409,13 @@
      "kiekis": 18
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.92,
+     "reiksme": 2.05,
      "kiekis": 1
     }
    },
    "717044": {
     "tankis": {
-     "reiksme": 19233,
+     "reiksme": 19179,
      "kiekis": 2308
     },
     "vaiku_dalis": {
@@ -2443,7 +2469,7 @@
    },
    "714330": {
     "tankis": {
-     "reiksme": 17167,
+     "reiksme": 17152,
      "kiekis": 4017
     },
     "vaiku_dalis": {
@@ -2497,7 +2523,7 @@
    },
    "717046": {
     "tankis": {
-     "reiksme": 16053,
+     "reiksme": 16063,
      "kiekis": 3949
     },
     "vaiku_dalis": {
@@ -2551,19 +2577,19 @@
    },
    "714240": {
     "tankis": {
-     "reiksme": 8338,
+     "reiksme": 8337,
      "kiekis": 5495
     },
     "vaiku_dalis": {
      "reiksme": 14.8,
-     "kiekis": 811
+     "kiekis": 812
     },
     "senjoru_dalis": {
-     "reiksme": 28.3,
-     "kiekis": 1556
+     "reiksme": 28.2,
+     "kiekis": 1552
     },
     "vaikai": {
-     "reiksme": 3.7,
+     "reiksme": 3.69,
      "kiekis": 3
     },
     "sveikata": {
@@ -2599,7 +2625,7 @@
      "kiekis": 2
     },
     "zaidimu_aiksteles": {
-     "reiksme": 8.63,
+     "reiksme": 8.62,
      "kiekis": 7
     }
    },
@@ -2613,8 +2639,8 @@
      "kiekis": 381
     },
     "senjoru_dalis": {
-     "reiksme": 29.4,
-     "kiekis": 829
+     "reiksme": 29.3,
+     "kiekis": 826
     },
     "vaikai": {
      "reiksme": 2.62,
@@ -2659,7 +2685,7 @@
    },
    "716314": {
     "tankis": {
-     "reiksme": 11721,
+     "reiksme": 11739,
      "kiekis": 3692
     },
     "vaiku_dalis": {
@@ -2717,15 +2743,15 @@
      "kiekis": 2996
     },
     "vaiku_dalis": {
-     "reiksme": 15.5,
-     "kiekis": 463
+     "reiksme": 15.3,
+     "kiekis": 457
     },
     "senjoru_dalis": {
-     "reiksme": 25.1,
-     "kiekis": 753
+     "reiksme": 24.5,
+     "kiekis": 735
     },
     "vaikai": {
-     "reiksme": 6.48,
+     "reiksme": 6.56,
      "kiekis": 3
     },
     "sveikata": {
@@ -2767,16 +2793,16 @@
    },
    "714244": {
     "tankis": {
-     "reiksme": 19045,
+     "reiksme": 19076,
      "kiekis": 5104
     },
     "vaiku_dalis": {
      "reiksme": 14.7,
-     "kiekis": 750
+     "kiekis": 751
     },
     "senjoru_dalis": {
      "reiksme": 29.6,
-     "kiekis": 1513
+     "kiekis": 1512
     },
     "vaikai": {
      "reiksme": 1.33,
@@ -2825,15 +2851,15 @@
      "kiekis": 1680
     },
     "vaiku_dalis": {
-     "reiksme": 17.6,
-     "kiekis": 295
+     "reiksme": 15.2,
+     "kiekis": 255
     },
     "senjoru_dalis": {
-     "reiksme": 20.3,
-     "kiekis": 341
+     "reiksme": 20.0,
+     "kiekis": 336
     },
     "vaikai": {
-     "reiksme": 3.39,
+     "reiksme": 3.92,
      "kiekis": 1
     },
     "sveikata": {
@@ -2879,15 +2905,15 @@
      "kiekis": 5410
     },
     "vaiku_dalis": {
-     "reiksme": 22.1,
-     "kiekis": 1195
+     "reiksme": 20.4,
+     "kiekis": 1103
     },
     "senjoru_dalis": {
-     "reiksme": 16.2,
-     "kiekis": 878
+     "reiksme": 14.2,
+     "kiekis": 767
     },
     "vaikai": {
-     "reiksme": 0.84,
+     "reiksme": 0.91,
      "kiekis": 1
     },
     "sveikata": {
@@ -2923,7 +2949,7 @@
      "kiekis": 7
     },
     "zaidimu_aiksteles": {
-     "reiksme": 0.84,
+     "reiksme": 0.91,
      "kiekis": 1
     }
    },
@@ -2933,15 +2959,15 @@
      "kiekis": 1957
     },
     "vaiku_dalis": {
-     "reiksme": 19.0,
-     "kiekis": 371
+     "reiksme": 15.9,
+     "kiekis": 312
     },
     "senjoru_dalis": {
-     "reiksme": 19.3,
-     "kiekis": 378
+     "reiksme": 20.6,
+     "kiekis": 404
     },
     "vaikai": {
-     "reiksme": 5.39,
+     "reiksme": 6.41,
      "kiekis": 2
     },
     "sveikata": {
@@ -2977,25 +3003,25 @@
      "kiekis": 7
     },
     "zaidimu_aiksteles": {
-     "reiksme": 5.39,
+     "reiksme": 6.41,
      "kiekis": 2
     }
    },
    "714230": {
     "tankis": {
-     "reiksme": 968,
-     "kiekis": 3188
+     "reiksme": 969,
+     "kiekis": 3189
     },
     "vaiku_dalis": {
-     "reiksme": 18.7,
-     "kiekis": 596
+     "reiksme": 17.2,
+     "kiekis": 550
     },
     "senjoru_dalis": {
-     "reiksme": 19.7,
-     "kiekis": 627
+     "reiksme": 18.2,
+     "kiekis": 580
     },
     "vaikai": {
-     "reiksme": 1.68,
+     "reiksme": 1.82,
      "kiekis": 1
     },
     "sveikata": {
@@ -3007,7 +3033,7 @@
      "kiekis": 0
     },
     "zalieji_plotai": {
-     "reiksme": 451.1,
+     "reiksme": 451,
      "kiekis": 143.8
     },
     "zalieji_plotai_dalis": {
@@ -3031,7 +3057,7 @@
      "kiekis": 2
     },
     "zaidimu_aiksteles": {
-     "reiksme": 3.36,
+     "reiksme": 3.64,
      "kiekis": 2
     }
    },
@@ -3041,15 +3067,15 @@
      "kiekis": 3842
     },
     "vaiku_dalis": {
-     "reiksme": 14.0,
-     "kiekis": 537
+     "reiksme": 13.8,
+     "kiekis": 532
     },
     "senjoru_dalis": {
-     "reiksme": 20.5,
-     "kiekis": 789
+     "reiksme": 20.1,
+     "kiekis": 773
     },
     "vaikai": {
-     "reiksme": 1.86,
+     "reiksme": 1.88,
      "kiekis": 1
     },
     "sveikata": {
@@ -3095,15 +3121,15 @@
      "kiekis": 3365
     },
     "vaiku_dalis": {
-     "reiksme": 15.8,
-     "kiekis": 530
+     "reiksme": 15.2,
+     "kiekis": 510
     },
     "senjoru_dalis": {
-     "reiksme": 17.5,
-     "kiekis": 589
+     "reiksme": 17.7,
+     "kiekis": 594
     },
     "vaikai": {
-     "reiksme": 5.66,
+     "reiksme": 5.88,
      "kiekis": 3
     },
     "sveikata": {
@@ -3139,25 +3165,25 @@
      "kiekis": 7
     },
     "zaidimu_aiksteles": {
-     "reiksme": 5.66,
+     "reiksme": 5.88,
      "kiekis": 3
     }
    },
    "716998": {
     "tankis": {
-     "reiksme": 1249,
+     "reiksme": 1250,
      "kiekis": 2070
     },
     "vaiku_dalis": {
-     "reiksme": 14.4,
-     "kiekis": 299
+     "reiksme": 12.1,
+     "kiekis": 251
     },
     "senjoru_dalis": {
-     "reiksme": 21.2,
-     "kiekis": 438
+     "reiksme": 22.1,
+     "kiekis": 458
     },
     "vaikai": {
-     "reiksme": 6.69,
+     "reiksme": 7.97,
      "kiekis": 2
     },
     "sveikata": {
@@ -3203,15 +3229,15 @@
      "kiekis": 2421
     },
     "vaiku_dalis": {
-     "reiksme": 16.9,
-     "kiekis": 410
+     "reiksme": 15.8,
+     "kiekis": 383
     },
     "senjoru_dalis": {
-     "reiksme": 16.8,
-     "kiekis": 406
+     "reiksme": 16.5,
+     "kiekis": 400
     },
     "vaikai": {
-     "reiksme": 4.88,
+     "reiksme": 5.22,
      "kiekis": 2
     },
     "sveikata": {
@@ -3247,22 +3273,22 @@
      "kiekis": 3
     },
     "zaidimu_aiksteles": {
-     "reiksme": 4.88,
+     "reiksme": 5.22,
      "kiekis": 2
     }
    },
    "714836": {
     "tankis": {
-     "reiksme": 1541,
+     "reiksme": 1540,
      "kiekis": 3195
     },
     "vaiku_dalis": {
-     "reiksme": 14.8,
-     "kiekis": 474
+     "reiksme": 14.4,
+     "kiekis": 460
     },
     "senjoru_dalis": {
-     "reiksme": 22.3,
-     "kiekis": 713
+     "reiksme": 21.6,
+     "kiekis": 689
     },
     "vaikai": {
      "reiksme": 0,
@@ -3307,19 +3333,19 @@
    },
    "714678": {
     "tankis": {
-     "reiksme": 1373,
+     "reiksme": 1372,
      "kiekis": 3032
     },
     "vaiku_dalis": {
-     "reiksme": 17.2,
-     "kiekis": 520
+     "reiksme": 14.7,
+     "kiekis": 445
     },
     "senjoru_dalis": {
-     "reiksme": 23.2,
-     "kiekis": 704
+     "reiksme": 22.3,
+     "kiekis": 677
     },
     "vaikai": {
-     "reiksme": 11.54,
+     "reiksme": 13.48,
      "kiekis": 6
     },
     "sveikata": {
@@ -3355,7 +3381,7 @@
      "kiekis": 10
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.92,
+     "reiksme": 2.25,
      "kiekis": 1
     }
    },
@@ -3365,15 +3391,15 @@
      "kiekis": 2207
     },
     "vaiku_dalis": {
-     "reiksme": 18.6,
-     "kiekis": 411
+     "reiksme": 15.5,
+     "kiekis": 341
     },
     "senjoru_dalis": {
-     "reiksme": 21.8,
-     "kiekis": 481
+     "reiksme": 20.9,
+     "kiekis": 462
     },
     "vaikai": {
-     "reiksme": 4.87,
+     "reiksme": 5.87,
      "kiekis": 2
     },
     "sveikata": {
@@ -3409,7 +3435,7 @@
      "kiekis": 8
     },
     "zaidimu_aiksteles": {
-     "reiksme": 9.73,
+     "reiksme": 11.73,
      "kiekis": 4
     }
    },
@@ -3419,15 +3445,15 @@
      "kiekis": 3355
     },
     "vaiku_dalis": {
-     "reiksme": 19.9,
-     "kiekis": 669
+     "reiksme": 16.8,
+     "kiekis": 562
     },
     "senjoru_dalis": {
-     "reiksme": 20.9,
-     "kiekis": 702
+     "reiksme": 18.2,
+     "kiekis": 610
     },
     "vaikai": {
-     "reiksme": 2.99,
+     "reiksme": 3.56,
      "kiekis": 2
     },
     "sveikata": {
@@ -3463,7 +3489,7 @@
      "kiekis": 4
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.99,
+     "reiksme": 3.56,
      "kiekis": 2
     }
    },
@@ -3473,15 +3499,15 @@
      "kiekis": 3522
     },
     "vaiku_dalis": {
-     "reiksme": 25.2,
-     "kiekis": 888
+     "reiksme": 20.7,
+     "kiekis": 730
     },
     "senjoru_dalis": {
-     "reiksme": 19.3,
-     "kiekis": 678
+     "reiksme": 15.3,
+     "kiekis": 539
     },
     "vaikai": {
-     "reiksme": 1.13,
+     "reiksme": 1.37,
      "kiekis": 1
     },
     "sveikata": {
@@ -3527,15 +3553,15 @@
      "kiekis": 3711
     },
     "vaiku_dalis": {
-     "reiksme": 22.9,
-     "kiekis": 848
+     "reiksme": 20.0,
+     "kiekis": 744
     },
     "senjoru_dalis": {
-     "reiksme": 17.4,
-     "kiekis": 645
+     "reiksme": 14.4,
+     "kiekis": 533
     },
     "vaikai": {
-     "reiksme": 2.36,
+     "reiksme": 2.69,
      "kiekis": 2
     },
     "sveikata": {
@@ -3571,25 +3597,25 @@
      "kiekis": 1
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.18,
+     "reiksme": 1.34,
      "kiekis": 1
     }
    },
    "714246": {
     "tankis": {
-     "reiksme": 9234,
+     "reiksme": 9230,
      "kiekis": 4349
     },
     "vaiku_dalis": {
      "reiksme": 13.8,
-     "kiekis": 599
+     "kiekis": 598
     },
     "senjoru_dalis": {
-     "reiksme": 27.6,
-     "kiekis": 1200
+     "reiksme": 27.4,
+     "kiekis": 1192
     },
     "vaikai": {
-     "reiksme": 8.35,
+     "reiksme": 8.36,
      "kiekis": 5
     },
     "sveikata": {
@@ -3625,13 +3651,13 @@
      "kiekis": 6
     },
     "zaidimu_aiksteles": {
-     "reiksme": 16.69,
+     "reiksme": 16.72,
      "kiekis": 10
     }
    },
    "713786": {
     "tankis": {
-     "reiksme": 16055,
+     "reiksme": 16050,
      "kiekis": 2938
     },
     "vaiku_dalis": {
@@ -3739,7 +3765,7 @@
    },
    "716330": {
     "tankis": {
-     "reiksme": 7774,
+     "reiksme": 7783,
      "kiekis": 3273
     },
     "vaiku_dalis": {
@@ -3793,7 +3819,7 @@
    },
    "714684": {
     "tankis": {
-     "reiksme": 17000,
+     "reiksme": 16990,
      "kiekis": 2482
     },
     "vaiku_dalis": {
@@ -3825,7 +3851,7 @@
      "kiekis": 6.6
     },
     "pesciuju_takai": {
-     "reiksme": 1.39,
+     "reiksme": null,
      "kiekis": 2.7
     },
     "renovacija": {
@@ -3851,15 +3877,15 @@
      "kiekis": 3532
     },
     "vaiku_dalis": {
-     "reiksme": 15.0,
-     "kiekis": 529
+     "reiksme": 14.4,
+     "kiekis": 510
     },
     "senjoru_dalis": {
-     "reiksme": 21.8,
-     "kiekis": 769
+     "reiksme": 21.7,
+     "kiekis": 768
     },
     "vaikai": {
-     "reiksme": 7.56,
+     "reiksme": 7.84,
      "kiekis": 4
     },
     "sveikata": {
@@ -3895,7 +3921,7 @@
      "kiekis": 12
     },
     "zaidimu_aiksteles": {
-     "reiksme": 7.56,
+     "reiksme": 7.84,
      "kiekis": 4
     }
    },
@@ -3905,15 +3931,15 @@
      "kiekis": 3800
     },
     "vaiku_dalis": {
-     "reiksme": 15.9,
-     "kiekis": 603
+     "reiksme": 15.0,
+     "kiekis": 571
     },
     "senjoru_dalis": {
-     "reiksme": 22.7,
-     "kiekis": 864
+     "reiksme": 22.3,
+     "kiekis": 848
     },
     "vaikai": {
-     "reiksme": 3.32,
+     "reiksme": 3.5,
      "kiekis": 2
     },
     "sveikata": {
@@ -3955,7 +3981,7 @@
    },
    "716334": {
     "tankis": {
-     "reiksme": 18531,
+     "reiksme": 18581,
      "kiekis": 2409
     },
     "vaiku_dalis": {
@@ -4009,19 +4035,19 @@
    },
    "716994": {
     "tankis": {
-     "reiksme": 9284,
+     "reiksme": 9274,
      "kiekis": 3203
     },
     "vaiku_dalis": {
-     "reiksme": 14.3,
-     "kiekis": 457
+     "reiksme": 14.0,
+     "kiekis": 450
     },
     "senjoru_dalis": {
-     "reiksme": 22.7,
-     "kiekis": 726
+     "reiksme": 22.6,
+     "kiekis": 723
     },
     "vaikai": {
-     "reiksme": 4.38,
+     "reiksme": 4.44,
      "kiekis": 2
     },
     "sveikata": {
@@ -4057,7 +4083,7 @@
      "kiekis": 4
     },
     "zaidimu_aiksteles": {
-     "reiksme": 4.38,
+     "reiksme": 4.44,
      "kiekis": 2
     }
    },
@@ -4068,14 +4094,14 @@
     },
     "vaiku_dalis": {
      "reiksme": 13.9,
-     "kiekis": 434
+     "kiekis": 435
     },
     "senjoru_dalis": {
-     "reiksme": 19.9,
-     "kiekis": 623
+     "reiksme": 19.8,
+     "kiekis": 619
     },
     "vaikai": {
-     "reiksme": 16.13,
+     "reiksme": 16.09,
      "kiekis": 7
     },
     "sveikata": {
@@ -4121,15 +4147,15 @@
      "kiekis": 3622
     },
     "vaiku_dalis": {
-     "reiksme": 16.5,
-     "kiekis": 599
+     "reiksme": 13.3,
+     "kiekis": 482
     },
     "senjoru_dalis": {
-     "reiksme": 22.2,
-     "kiekis": 804
+     "reiksme": 20.4,
+     "kiekis": 738
     },
     "vaikai": {
-     "reiksme": 3.34,
+     "reiksme": 4.15,
      "kiekis": 2
     },
     "sveikata": {
@@ -4165,25 +4191,25 @@
      "kiekis": 7
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.67,
+     "reiksme": 2.07,
      "kiekis": 1
     }
    },
    "716996": {
     "tankis": {
-     "reiksme": 7420,
+     "reiksme": 7422,
      "kiekis": 2775
     },
     "vaiku_dalis": {
-     "reiksme": 15.5,
-     "kiekis": 431
+     "reiksme": 15.6,
+     "kiekis": 432
     },
     "senjoru_dalis": {
-     "reiksme": 21.0,
-     "kiekis": 582
+     "reiksme": 20.9,
+     "kiekis": 581
     },
     "vaikai": {
-     "reiksme": 4.64,
+     "reiksme": 4.63,
      "kiekis": 2
     },
     "sveikata": {
@@ -4219,7 +4245,7 @@
      "kiekis": 15
     },
     "zaidimu_aiksteles": {
-     "reiksme": 4.64,
+     "reiksme": 4.63,
      "kiekis": 2
     }
    },
@@ -4229,12 +4255,12 @@
      "kiekis": 3562
     },
     "vaiku_dalis": {
-     "reiksme": 16.6,
-     "kiekis": 592
+     "reiksme": 15.6,
+     "kiekis": 554
     },
     "senjoru_dalis": {
-     "reiksme": 20.1,
-     "kiekis": 717
+     "reiksme": 17.8,
+     "kiekis": 634
     },
     "vaikai": {
      "reiksme": 0,
@@ -4283,15 +4309,15 @@
      "kiekis": 5311
     },
     "vaiku_dalis": {
-     "reiksme": 14.5,
-     "kiekis": 771
+     "reiksme": 14.1,
+     "kiekis": 750
     },
     "senjoru_dalis": {
-     "reiksme": 19.8,
-     "kiekis": 1054
+     "reiksme": 19.7,
+     "kiekis": 1046
     },
     "vaikai": {
-     "reiksme": 3.89,
+     "reiksme": 4,
      "kiekis": 3
     },
     "sveikata": {
@@ -4327,7 +4353,7 @@
      "kiekis": 8
     },
     "zaidimu_aiksteles": {
-     "reiksme": 3.89,
+     "reiksme": 4,
      "kiekis": 3
     }
    },
@@ -4341,8 +4367,8 @@
      "kiekis": 885
     },
     "senjoru_dalis": {
-     "reiksme": 19.2,
-     "kiekis": 1045
+     "reiksme": 19.1,
+     "kiekis": 1040
     },
     "vaikai": {
      "reiksme": 1.13,
@@ -4387,7 +4413,7 @@
    },
    "716318": {
     "tankis": {
-     "reiksme": 11065,
+     "reiksme": 11067,
      "kiekis": 3740
     },
     "vaiku_dalis": {
@@ -4441,7 +4467,7 @@
    },
    "714654": {
     "tankis": {
-     "reiksme": 6521,
+     "reiksme": 6527,
      "kiekis": 3254
     },
     "vaiku_dalis": {
@@ -4449,8 +4475,8 @@
      "kiekis": 468
     },
     "senjoru_dalis": {
-     "reiksme": 18.7,
-     "kiekis": 607
+     "reiksme": 18.4,
+     "kiekis": 600
     },
     "vaikai": {
      "reiksme": 0,
@@ -4495,16 +4521,16 @@
    },
    "716320": {
     "tankis": {
-     "reiksme": 4654,
-     "kiekis": 2639
+     "reiksme": 4655,
+     "kiekis": 2640
     },
     "vaiku_dalis": {
      "reiksme": 13.7,
-     "kiekis": 362
+     "kiekis": 361
     },
     "senjoru_dalis": {
-     "reiksme": 26.5,
-     "kiekis": 700
+     "reiksme": 26.4,
+     "kiekis": 697
     },
     "vaikai": {
      "reiksme": 0,
@@ -4543,13 +4569,13 @@
      "kiekis": 2
     },
     "zaidimu_aiksteles": {
-     "reiksme": 11.05,
+     "reiksme": 11.08,
      "kiekis": 4
     }
    },
    "713220": {
     "tankis": {
-     "reiksme": 11486,
+     "reiksme": 11471,
      "kiekis": 2435
     },
     "vaiku_dalis": {
@@ -4557,8 +4583,8 @@
      "kiekis": 350
     },
     "senjoru_dalis": {
-     "reiksme": 23.8,
-     "kiekis": 579
+     "reiksme": 23.7,
+     "kiekis": 578
     },
     "vaikai": {
      "reiksme": 0,
@@ -4603,19 +4629,19 @@
    },
    "716322": {
     "tankis": {
-     "reiksme": 7820,
-     "kiekis": 2127
+     "reiksme": 7818,
+     "kiekis": 2128
     },
     "vaiku_dalis": {
-     "reiksme": 12.6,
-     "kiekis": 267
+     "reiksme": 12.1,
+     "kiekis": 257
     },
     "senjoru_dalis": {
-     "reiksme": 26.5,
-     "kiekis": 564
+     "reiksme": 26.6,
+     "kiekis": 565
     },
     "vaikai": {
-     "reiksme": 3.75,
+     "reiksme": 3.89,
      "kiekis": 1
     },
     "sveikata": {
@@ -4647,7 +4673,7 @@
      "kiekis": 1
     },
     "sportas": {
-     "reiksme": 28.21,
+     "reiksme": 28.2,
      "kiekis": 6
     },
     "zaidimu_aiksteles": {
@@ -4657,19 +4683,19 @@
    },
    "716324": {
     "tankis": {
-     "reiksme": 14309,
+     "reiksme": 14318,
      "kiekis": 2690
     },
     "vaiku_dalis": {
-     "reiksme": 13.3,
-     "kiekis": 358
+     "reiksme": 13.2,
+     "kiekis": 356
     },
     "senjoru_dalis": {
-     "reiksme": 22.9,
-     "kiekis": 616
+     "reiksme": 23.0,
+     "kiekis": 618
     },
     "vaikai": {
-     "reiksme": 2.79,
+     "reiksme": 2.81,
      "kiekis": 1
     },
     "sveikata": {
@@ -4705,13 +4731,13 @@
      "kiekis": 1
     },
     "zaidimu_aiksteles": {
-     "reiksme": 8.38,
+     "reiksme": 8.43,
      "kiekis": 3
     }
    },
    "713236": {
     "tankis": {
-     "reiksme": 13066,
+     "reiksme": 13056,
      "kiekis": 2770
     },
     "vaiku_dalis": {
@@ -4765,7 +4791,7 @@
    },
    "714656": {
     "tankis": {
-     "reiksme": 18369,
+     "reiksme": 18339,
      "kiekis": 4574
     },
     "vaiku_dalis": {
@@ -4819,7 +4845,7 @@
    },
    "716326": {
     "tankis": {
-     "reiksme": 9061,
+     "reiksme": 9056,
      "kiekis": 2990
     },
     "vaiku_dalis": {
@@ -4873,7 +4899,7 @@
    },
    "714682": {
     "tankis": {
-     "reiksme": 17960,
+     "reiksme": 18031,
      "kiekis": 2227
     },
     "vaiku_dalis": {
@@ -4931,15 +4957,15 @@
      "kiekis": 5841
     },
     "vaiku_dalis": {
-     "reiksme": 19.8,
-     "kiekis": 1158
+     "reiksme": 17.8,
+     "kiekis": 1042
     },
     "senjoru_dalis": {
-     "reiksme": 18.1,
-     "kiekis": 1055
+     "reiksme": 16.7,
+     "kiekis": 973
     },
     "vaikai": {
-     "reiksme": 1.73,
+     "reiksme": 1.92,
      "kiekis": 2
     },
     "sveikata": {
@@ -4975,13 +5001,13 @@
      "kiekis": 6
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.73,
+     "reiksme": 1.92,
      "kiekis": 2
     }
    },
    "716942": {
     "tankis": {
-     "reiksme": 15674,
+     "reiksme": 15646,
      "kiekis": 3464
     },
     "vaiku_dalis": {
@@ -5035,16 +5061,16 @@
    },
    "716944": {
     "tankis": {
-     "reiksme": 7376,
-     "kiekis": 4514
+     "reiksme": 7381,
+     "kiekis": 4515
     },
     "vaiku_dalis": {
-     "reiksme": 15.4,
-     "kiekis": 693
+     "reiksme": 15.3,
+     "kiekis": 689
     },
     "senjoru_dalis": {
      "reiksme": 21.4,
-     "kiekis": 964
+     "kiekis": 965
     },
     "vaikai": {
      "reiksme": 0,
@@ -5079,17 +5105,17 @@
      "kiekis": 2
     },
     "sportas": {
-     "reiksme": 15.51,
+     "reiksme": 15.5,
      "kiekis": 7
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.89,
+     "reiksme": 2.9,
      "kiekis": 2
     }
    },
    "716946": {
     "tankis": {
-     "reiksme": 7670,
+     "reiksme": 7672,
      "kiekis": 3881
     },
     "vaiku_dalis": {
@@ -5143,19 +5169,19 @@
    },
    "716948": {
     "tankis": {
-     "reiksme": 11836,
+     "reiksme": 11833,
      "kiekis": 5350
     },
     "vaiku_dalis": {
-     "reiksme": 16.0,
-     "kiekis": 855
+     "reiksme": 15.9,
+     "kiekis": 850
     },
     "senjoru_dalis": {
-     "reiksme": 21.2,
-     "kiekis": 1133
+     "reiksme": 21.1,
+     "kiekis": 1131
     },
     "vaikai": {
-     "reiksme": 5.85,
+     "reiksme": 5.88,
      "kiekis": 5
     },
     "sveikata": {
@@ -5191,25 +5217,25 @@
      "kiekis": 7
     },
     "zaidimu_aiksteles": {
-     "reiksme": 3.51,
+     "reiksme": 3.53,
      "kiekis": 3
     }
    },
    "713192": {
     "tankis": {
-     "reiksme": 6135,
+     "reiksme": 6136,
      "kiekis": 4166
     },
     "vaiku_dalis": {
-     "reiksme": 18.9,
-     "kiekis": 786
+     "reiksme": 18.7,
+     "kiekis": 781
     },
     "senjoru_dalis": {
-     "reiksme": 15.1,
-     "kiekis": 631
+     "reiksme": 14.9,
+     "kiekis": 619
     },
     "vaikai": {
-     "reiksme": 2.54,
+     "reiksme": 2.56,
      "kiekis": 2
     },
     "sveikata": {
@@ -5245,25 +5271,25 @@
      "kiekis": 7
     },
     "zaidimu_aiksteles": {
-     "reiksme": 1.27,
+     "reiksme": 1.28,
      "kiekis": 1
     }
    },
    "713210": {
     "tankis": {
-     "reiksme": 14825,
+     "reiksme": 14813,
      "kiekis": 4566
     },
     "vaiku_dalis": {
      "reiksme": 16.7,
-     "kiekis": 764
+     "kiekis": 762
     },
     "senjoru_dalis": {
      "reiksme": 18.7,
-     "kiekis": 853
+     "kiekis": 852
     },
     "vaikai": {
-     "reiksme": 3.93,
+     "reiksme": 3.94,
      "kiekis": 3
     },
     "sveikata": {
@@ -5309,15 +5335,15 @@
      "kiekis": 3790
     },
     "vaiku_dalis": {
-     "reiksme": 19.4,
-     "kiekis": 736
+     "reiksme": 19.1,
+     "kiekis": 723
     },
     "senjoru_dalis": {
-     "reiksme": 13.2,
-     "kiekis": 500
+     "reiksme": 12.7,
+     "kiekis": 480
     },
     "vaikai": {
-     "reiksme": 1.36,
+     "reiksme": 1.38,
      "kiekis": 1
     },
     "sveikata": {
@@ -5353,25 +5379,25 @@
      "kiekis": 3
     },
     "zaidimu_aiksteles": {
-     "reiksme": 10.87,
+     "reiksme": 11.07,
      "kiekis": 8
     }
    },
    "716950": {
     "tankis": {
-     "reiksme": 2348,
+     "reiksme": 2349,
      "kiekis": 2590
     },
     "vaiku_dalis": {
-     "reiksme": 15.7,
-     "kiekis": 406
+     "reiksme": 14.5,
+     "kiekis": 376
     },
     "senjoru_dalis": {
-     "reiksme": 17.7,
-     "kiekis": 458
+     "reiksme": 17.8,
+     "kiekis": 461
     },
     "vaikai": {
-     "reiksme": 2.46,
+     "reiksme": 2.66,
      "kiekis": 1
     },
     "sveikata": {
@@ -5407,25 +5433,25 @@
      "kiekis": 1
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.46,
+     "reiksme": 2.66,
      "kiekis": 1
     }
    },
    "713764": {
     "tankis": {
      "reiksme": 3375,
-     "kiekis": 2430
+     "kiekis": 2431
     },
     "vaiku_dalis": {
-     "reiksme": 14.6,
-     "kiekis": 354
+     "reiksme": 13.8,
+     "kiekis": 335
     },
     "senjoru_dalis": {
-     "reiksme": 18.3,
-     "kiekis": 445
+     "reiksme": 18.0,
+     "kiekis": 438
     },
     "vaikai": {
-     "reiksme": 8.47,
+     "reiksme": 8.96,
      "kiekis": 3
     },
     "sveikata": {
@@ -5457,7 +5483,7 @@
      "kiekis": 0
     },
     "sportas": {
-     "reiksme": 4.12,
+     "reiksme": 4.11,
      "kiekis": 1
     },
     "zaidimu_aiksteles": {
@@ -5467,19 +5493,19 @@
    },
    "716972": {
     "tankis": {
-     "reiksme": 13729,
+     "reiksme": 13714,
      "kiekis": 4311
     },
     "vaiku_dalis": {
-     "reiksme": 15.9,
-     "kiekis": 685
+     "reiksme": 15.8,
+     "kiekis": 683
     },
     "senjoru_dalis": {
-     "reiksme": 16.1,
-     "kiekis": 695
+     "reiksme": 16.0,
+     "kiekis": 691
     },
     "vaikai": {
-     "reiksme": 2.92,
+     "reiksme": 2.93,
      "kiekis": 2
     },
     "sveikata": {
@@ -5515,7 +5541,7 @@
      "kiekis": 9
     },
     "zaidimu_aiksteles": {
-     "reiksme": 2.92,
+     "reiksme": 2.93,
      "kiekis": 2
     }
    }
@@ -5524,18 +5550,18 @@
  "miestas": {
   "tankis": {
    "reiksme": 1933,
-   "kiekis": 303203
+   "kiekis": 303202
   },
   "vaiku_dalis": {
-   "reiksme": 16.2,
-   "kiekis": 49113
+   "reiksme": 15.5,
+   "kiekis": 47037
   },
   "senjoru_dalis": {
-   "reiksme": 21.6,
-   "kiekis": 65444
+   "reiksme": 21.1,
+   "kiekis": 64101
   },
   "vaikai": {
-   "reiksme": 3.85,
+   "reiksme": 4.02,
    "kiekis": 189
   },
   "sveikata": {
@@ -5571,7 +5597,7 @@
    "kiekis": 512
   },
   "zaidimu_aiksteles": {
-   "reiksme": 3.14,
+   "reiksme": 3.27,
    "kiekis": 154
   }
  },

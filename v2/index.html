@@ -208,6 +208,10 @@
   ul.plain { margin: 6px 0 0; padding-left: 20px; }
   ul.plain li { margin: 3px 0; }
 
+  /* Political-ad label (VRK atmintinė 2026-07-23; Reg. (EU) 2025/1410: dark text on light background,
+     visible without extra actions). Never hidden, also in ?embed=1. */
+  .pr-label { background: #ffffff; color: #002b5b; border: 1px solid rgba(0,43,91,0.28); border-radius: 4px; padding: 8px 12px; font-size: 13px; margin-bottom: 16px; }
+  .pr-label strong { text-transform: uppercase; letter-spacing: 0.02em; }
   footer.site { border-top: 1px solid var(--border); margin-top: 28px; padding-top: 14px; font-size: 12px; color: var(--text-muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
   .loading { padding: 40px 0; color: var(--text-muted); }
 
@@ -222,8 +226,10 @@
     <span class="brand-dots" aria-hidden="true"><span></span><span></span></span>
     <span class="eyebrow">Kaunas gali geriau – miesto duomenys<span class="prog-only"> ir programa</span></span>
     <h1 class="hd-green">Kauno vietovių atlasas</h1>
-    <p class="lede">Kaip gyvena kiekviena Kauno seniūnija ir rinkimų apylinkė: darželiai ir mokyklos, sveikatos priežiūra, žaluma, renovacija – vienam gyventojui.<span class="prog-only"> Ir ką siūlome ten, kur atsilikta.</span></p>
+    <p class="lede">Kaip gyvena kiekviena Kauno seniūnija ir rinkimų apylinkė: darželiai ir mokyklos, sveikatos priežiūra, žaluma, renovacija – teritorijos palygintos tarpusavyje.<span class="prog-only"> Ir ką siūlome ten, kur atsilikta.</span></p>
   </header>
+
+  <p class="pr-label"><strong>Politinė reklama.</strong> Atlasą neatlygintinai parengė Inga Popovaitė, Lietuvos žaliųjų partijos narė. Skirta 2027 m. savivaldybių tarybų ir merų rinkimams.</p>
 
   <div id="draft" class="draft" hidden></div>
 
@@ -236,7 +242,7 @@
   <main id="view"><p class="loading">Įkeliama…</p></main>
 
   <footer class="site">
-    <span>Parengė koalicija „Kaunas gali geriau“ (LP ir LŽP) · <a href="#/apie">Apie duomenis</a></span>
+    <span>Neatlygintinai parengė Inga Popovaitė (LŽP) · <a href="#/apie">Apie duomenis</a></span>
     <span><span id="foot-date"></span> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> bendraautoriai</span>
   </footer>
 </div>
@@ -246,7 +252,11 @@
 /* ===== state & data ===== */
 const S = { level: 'seniunijos', ind: null, geo: {}, R: null, P: null, proj: null };
 const LEVELS = { seniunijos: { one: 'seniūnija', many: 'Seniūnijos', prefix: 's' }, apylinkes: { one: 'rinkimų apylinkė', many: 'Apylinkės', prefix: 'a' } };
-const fmt = (v, d) => v == null ? '–' : Number(v).toLocaleString('lt-LT', { maximumFractionDigits: d ?? (Math.abs(v) < 100 ? 1 : 0) });
+const fmt = (v, d) => {
+  if (v == null) return '–';
+  const n = Number(v), dd = d ?? (Math.abs(n) < 100 && !Number.isInteger(n) ? 1 : 0);
+  return n.toLocaleString('lt-LT', { minimumFractionDigits: dd, maximumFractionDigits: dd });  // 4,02 → „4,0“, not „4“
+};
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 async function load() {
@@ -402,6 +412,7 @@ function viewMap(root) {
     <div class="split">
       <div class="stack">
         <h2 class="hd-pink">${esc(m.pavadinimas)}: ${LEVELS[S.level].many.toLowerCase()}</h2>
+        ${m.tipas ? `<p class="ind-note" style="margin:0"><span class="tag">${esc(m.tipas)}</span>${esc(m.skaiciavimas)}</p>` : ''}
         <p class="muted" style="margin:0">${esc(m.aprasymas)} Spustelėkite teritoriją, kad matytumėte jos rodiklius<span class="prog-only"> ir mūsų pasiūlymus</span>.</p>
         ${controls()}
         ${mapSVG(S.level, S.ind)}
@@ -527,11 +538,11 @@ function viewSection(root, sid) {
 }
 
 function viewAbout(root) {
-  const items = S.R.rodikliai.map(m => `<li><b>${esc(m.pavadinimas)}</b> (${esc(m.vienetas)}) – ${esc(m.aprasymas)} <span class="muted">Šaltinis: ${esc(m.saltinis)}, ${esc(m.data)}.</span></li>`).join('');
+  const items = S.R.rodikliai.map(m => `<li><b>${esc(m.pavadinimas)}</b> (${esc(m.vienetas)}) – ${esc(m.aprasymas)}${m.skaiciavimas ? ` Skaičiuojama: ${esc(m.skaiciavimas)}.` : ''} <span class="muted">Šaltinis: ${esc(m.saltinis)}, ${esc(m.data)}.</span></li>`).join('');
   root.innerHTML = `
     <div class="stack" style="max-width:72ch">
       <h2 class="hd-pink">Apie duomenis</h2>
-      <p>Atlasas rodo viešai prieinamus duomenis apie Kauno seniūnijas (9) ir rinkimų apylinkes (90). Dauguma rodiklių perskaičiuoti vienam gyventojui arba atitinkamos amžiaus grupės gyventojams, kad didesnės teritorijos neturėtų pranašumo vien dėl dydžio.</p>
+      <p>Atlasas rodo viešai prieinamus duomenis apie Kauno seniūnijas (9) ir rinkimų apylinkes (90). Rodikliai yra kelių rūšių: kiek įstaigų, vietų ar ploto tenka gyventojams ar vaikams; kokią dalį sudaro tam tikra grupė (pvz., renovuoti daugiabučiai ar žalieji plotai); dviejų dydžių santykis; paprastas kiekis. Prie kiekvieno rodiklio nurodyta, kaip jis skaičiuojamas. Kur įmanoma, rodiklis susietas su gyventojų skaičiumi arba plotu, kad didesnės teritorijos neturėtų pranašumo vien dėl dydžio.</p>
       <h3>Rodikliai</h3><ul class="plain">${items}</ul>
       <h3>Svarbu</h3>
       <ul class="plain">
@@ -541,8 +552,8 @@ function viewAbout(root) {
         <li>Tai nėra oficiali statistika.</li>
       </ul>
       <h3>Kas parengė</h3>
-      <p>Atlasą parengė koalicija „Kaunas gali geriau“ (Laisvės partija ir Lietuvos žaliųjų partija) iš viešų duomenų. Duomenis teikiančios institucijos atlaso nerengė ir jo nevertina. Teritoriją pasirenkate patys – atlasas nenustato jūsų buvimo vietos.</p>
-      <p class="ind-note">Žemėlapio ir dalies rodiklių duomenys © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap bendraautoriai</a>, licencija ODbL. Seniūnijų ribos – Registrų centras (CC BY 4.0); rinkimų apylinkių ribos ir rinkėjų skaičius – Vyriausioji rinkimų komisija; gyventojai – 2021 m. gyventojų ir būstų surašymas (Valstybės duomenų agentūra, CC BY 4.0).</p>
+      <p>Atlasą iš viešų duomenų neatlygintinai parengė Inga Popovaitė, Lietuvos žaliųjų partijos narė. Skirta 2027 m. savivaldybių tarybų ir merų rinkimams. Duomenis teikiančios institucijos atlaso nerengė ir jo nevertina. Teritoriją pasirenkate patys – atlasas nenustato jūsų buvimo vietos.</p>
+      <p class="ind-note">Žemėlapio ir dalies rodiklių duomenys © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap bendraautoriai</a>, licencija ODbL. Seniūnijų ribos – Registrų centras (CC BY 4.0); rinkimų apylinkių ribos (2024 m. Seimo rinkimų; 2027 m. apylinkės dar nepaskelbtos) ir rinkėjų skaičius – © Vyriausioji rinkimų komisija; gyventojai – 2021 m. gyventojų ir būstų surašymas (Valstybės duomenų agentūra, CC BY 4.0); renovacija – Aplinkos projektų valdymo agentūra (APVA); švietimo įstaigos – Švietimo ir mokslo institucijų registras (ŠMIR); socialinių paslaugų vietos – Kauno miesto socialinių paslaugų centras (kaunospc.lt).</p>
     </div>`;
 }
 

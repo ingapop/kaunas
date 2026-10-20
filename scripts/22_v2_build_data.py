@@ -37,15 +37,18 @@ KEEP = {
 
 # Census 2021 context ratios – population-based, no facility data involved.
 CONTEXT = [
-    {"id": "tankis", "pavadinimas": "Gyventojų tankis", "vienetas": "gyv./km²",
+    {"id": "tankis", "tipas": "Tenka 1 km²", "skaiciavimas": "gyventojų skaičius ÷ teritorijos plotas (km²)",
+     "pavadinimas": "Gyventojų tankis", "vienetas": "gyv./km²",
      "aprasymas": "Kiek gyventojų tenka vienam kvadratiniam kilometrui (2021 m.).",
      "kryptis": "kontekstas", "saltinis": "2021 m. gyventojų ir būstų surašymas, 100 m gardelė (Valstybės duomenų agentūra)",
-     "data": "2021-01-01", "faktai": None},
-    {"id": "vaiku_dalis", "pavadinimas": "Vaikų dalis", "vienetas": "proc. gyventojų (0–14 m.)",
+     "data": "2021-01-01", "faktai": "F-082"},
+    {"id": "vaiku_dalis", "tipas": "Gyventojų dalis", "skaiciavimas": "0–14 m. vaikų skaičius ÷ visų gyventojų skaičius × 100",
+     "pavadinimas": "Vaikų dalis", "vienetas": "proc. gyventojų (0–14 m.)",
      "aprasymas": "Kokią gyventojų dalį sudaro 0–14 metų vaikai.",
      "kryptis": "kontekstas", "saltinis": "2021 m. gyventojų ir būstų surašymas, 100 m gardelė (Valstybės duomenų agentūra)",
      "data": "2021-01-01", "faktai": None},
-    {"id": "senjoru_dalis", "pavadinimas": "Vyresnio amžiaus gyventojų dalis", "vienetas": "proc. gyventojų (65+ m.)",
+    {"id": "senjoru_dalis", "tipas": "Gyventojų dalis", "skaiciavimas": "65 m. ir vyresnių gyventojų skaičius ÷ visų gyventojų skaičius × 100",
+     "pavadinimas": "Vyresnio amžiaus gyventojų dalis", "vienetas": "proc. gyventojų (65+ m.)",
      "aprasymas": "Kokią gyventojų dalį sudaro 65 metų ir vyresni žmonės.",
      "kryptis": "kontekstas", "saltinis": "2021 m. gyventojų ir būstų surašymas, 100 m gardelė (Valstybės duomenų agentūra)",
      "data": "2021-01-01", "faktai": None},

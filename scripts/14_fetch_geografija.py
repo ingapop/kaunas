@@ -16,6 +16,11 @@ Sources (all public; licence noted in METODOLOGIJA.md "Geografija (2026-10 perkÅ
        1304/1/aktyvumas/aktyvumasRpg21934.json -> registered voters per apylinke (2023 municipal)
   4. Valstybes duomenu agentura, 2021 census 100 m grid (CC BY 4.0, data.gov.lt/datasets/1911):
        GyvSur100M2021.csv (urban settlements; pop + 0-14 / 15-64 / 65+)
+  6. Statistics Lithuania (OSP) open data API, table S3R167_M3010202 (resident population at the
+     beginning of the year by municipality x single year of age x sex), 2021:
+       osp_S3R167_M3010202_2021.xml  -> group mean ages and age shares used in script 15 to
+       estimate suppressed census age groups (added 2026-10-20). Only this file:
+       python3 scripts/14_fetch_geografija.py osp
   5. Evidence for the 2025 seniunija reform (kaunas.lt): council protocol 2025-07-08 (TP-6,
      decision T-572) PDF and the municipality news page of 2025-07-10.
 
@@ -40,6 +45,8 @@ SEIMAS_2024 = ("1544", "1", "2150")      # vr_id, round, rt_id (2024-10-13 Seima
 MUNI_2023 = ("1304", "1", "1922", "21934")  # vr_id, round, rt_id, Kauno miesto rpg_id
 CENSUS_100M = ("https://data.gov.lt/datasets/1911/versions/243/dynamic-resource/"
                "GyvSur100M2021/csv/download/")
+OSP_POP_2021 = ("https://osp-rs.stat.gov.lt/rest_xml/data/S3R167_M3010202"
+                "?startPeriod=2021&endPeriod=2021")
 REFORM_DOCS = {
     "kaunas_taryba_2025-07-08_protokolas_TP-6.pdf":
         "https://www.kaunas.lt/wp-content/uploads/sites/13/2025/07/t251006.pdf",
@@ -95,7 +102,23 @@ def arcgis_layer(service, where, name):
     return cnt
 
 
+def fetch_osp_only():
+    """Fetch only the OSP age table and merge its entry into the existing fetch_log.json."""
+    logf = os.path.join(OUT, "fetch_log.json")
+    if os.path.exists(logf):
+        with open(logf, encoding="utf-8") as f:
+            log.update(json.load(f))
+    save("osp_S3R167_M3010202_2021.xml", OSP_POP_2021)
+    with open(logf, "w", encoding="utf-8") as f:
+        json.dump(log, f, ensure_ascii=False, indent=1)
+
+
 def main():
+    import sys
+    if sys.argv[1:] == ["osp"]:
+        os.makedirs(OUT, exist_ok=True)
+        fetch_osp_only()
+        return
     os.makedirs(OUT, exist_ok=True)
     log["fetched_at"] = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
 
@@ -131,6 +154,9 @@ def main():
 
     # 4. Census grid
     save("GyvSur100M2021.csv", CENSUS_100M)
+
+    # 6. OSP population by single year of age, 2021 (age-group estimation in script 15)
+    save("osp_S3R167_M3010202_2021.xml", OSP_POP_2021)
 
     # 5. Reform evidence
     for name, url in REFORM_DOCS.items():

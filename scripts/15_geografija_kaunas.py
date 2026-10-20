@@ -22,18 +22,27 @@ Population denominator (2021 census, 100 m grid, VDA, data.gov.lt/datasets/1911)
     city polygon go to the nearest unit (reported).
   - Age groups: in the grid, values 1-9 of a sub-group are published as 9 (verified: every
     cell without a "9" has 0-14 + 15-64 + 65+ == pop exactly; for cells with "9" the
-    remainder pop - known groups always lies within [n9, 9*n9]). We replace each "9" by an
-    equal share of that remainder, so groups add up to pop exactly. Within those cells
-    the age split is an estimate; totals are exact to the published pop.
+    remainder pop - known groups always lies within [n9, 9*n9]).
+    One masked group -> its value is the remainder (exact).
+    Two or three masked groups -> estimated from the cell's published mean age (2026-10-20;
+    until then: equal split of the remainder, which overstated 0-14 by ~2 100 and 65+ by
+    ~1 300 at city level against OSP - see CHANGELOG):
+      x = argmin |x - p|^2  s.t.  sum(x) = remainder,  sum(x * m) = pop * mean_age - known
+      m = mean age of each group, p = remainder split by group shares, both from OSP
+      S3R167_M3010202 (Kauno m. sav., 2021-01-01, single years; 85+ taken as 89.5);
+      then clipped to the published range 1..9 and re-balanced to the remainder.
+    Groups add up to pop exactly; within masked cells the age split is an estimate.
 
 Analysis uses full-resolution geometry in EPSG:3346; only the web GeoJSON is simplified.
 """
 import csv
 import glob
 import json
+import math
 import os
 import re
 
+import numpy as np
 from pyproj import Transformer
 from shapely import STRtree
 from shapely.geometry import box, mapping, shape
@@ -44,6 +53,8 @@ OUT = "data/processed/geo"
 KAUNAS_SAV = "19"
 SIMPLIFY_M = 5.0
 AGE = ["all_00_14", "all_15_64", "all_65_plius"]
+OSP_AGE = "osp_S3R167_M3010202_2021.xml"  # script 14
+OSP_SAV = "19"                            # OSP code of Kauno m. sav.
 
 to_lks = Transformer.from_crs(4326, 3346, always_xy=True).transform
 to_wgs = Transformer.from_crs(3346, 4326, always_xy=True).transform
@@ -99,8 +110,62 @@ def apylinkes():
     return sorted(out, key=lambda x: (x["seimo_apygarda"], int(x["nr"])))
 
 
-def census_cells():
+def osp_age_profile():
+    """Kauno m. sav., 2021-01-01, both sexes: mean age (years) and share of 0-14 / 15-64 / 65+."""
+    with open(os.path.join(RAW, OSP_AGE), encoding="utf-8") as f:
+        txt = f.read()
+    n = {}
+    for obs in re.findall(r"<g:Obs>(.*?)</g:Obs>", txt, re.S):
+        key, rest = obs.split("</g:ObsKey>")
+        k = dict(re.findall(r'id="([^"]+)" value="([^"]*)"', key))
+        if k.get("savivaldybesRegdb") != OSP_SAV or k.get("Lytis") != "0":
+            continue
+        a = k["Demogr_amziusM1411"]
+        v = re.search(r'ObsValue value="([^"]+)"', rest).group(1)
+        if a.isdigit():
+            n[int(a) + 0.5] = int(float(v))
+        elif a == "g085":
+            n[89.5] = int(float(v))
+        elif a == "g000g999":
+            total = int(float(v))
+    assert sum(n.values()) == total, (sum(n.values()), total)
+    groups = [(0, 15), (15, 65), (65, 200)]
+    cnt = [sum(v for a, v in n.items() if lo <= a < hi) for lo, hi in groups]
+    mean = [sum(a * v for a, v in n.items() if lo <= a < hi) / c for (lo, hi), c in zip(groups, cnt)]
+    return {"total": total, "counts": cnt, "mean_age": np.array(mean), "share": np.array(cnt) / total}
+
+
+def fill_masked(vals, pop, mean_age, prof):
+    """vals: [0-14, 15-64, 65+] with 9 = masked (1..9). Returns float estimates summing to pop."""
+    g = np.array(vals, dtype=float)
+    mask = g == 9
+    k = int(mask.sum())
+    rem = pop - g[~mask].sum()
+    assert k <= rem <= 9 * k, (vals, pop)
+    if k == 1:
+        g[mask] = rem
+        return g
+    m = prof["mean_age"]
+    p = prof["share"][mask] / prof["share"][mask].sum() * rem
+    C = np.vstack([np.ones(k), m[mask]])
+    b = np.array([rem, pop * mean_age - g[~mask] @ m[~mask]])
+    x = np.clip(p + C.T @ np.linalg.solve(C @ C.T, b - C @ p), 1, 9)
+    for _ in range(50):
+        diff = rem - x.sum()
+        if abs(diff) < 1e-9:
+            break
+        free = (x < 9) if diff > 0 else (x > 1)
+        x[free] += diff / free.sum()
+        x = np.clip(x, 1, 9)
+    assert abs(x.sum() - rem) < 1e-6, (vals, pop, x)
+    g[mask] = x
+    return g
+
+
+def census_cells(stats=None):
+    prof = osp_age_profile()
     cells = []
+    eq = np.zeros(3)
     with open(os.path.join(RAW, "GyvSur100M2021.csv"), encoding="utf-8") as f:
         for r in csv.DictReader(f):
             if r["gyv_pav"] != "Kauno m.":
@@ -108,15 +173,27 @@ def census_cells():
             m = re.match(r"100x100mX(\d+)Y(\d+)$", r["grid_id"])
             x0, y0 = int(m.group(1)) * 10, int(m.group(2)) * 100
             pop = int(r["pop"])
-            vals = {g: int(r[g]) for g in AGE}
-            sup = [g for g in AGE if vals[g] == 9]
-            if sup:
-                rem = pop - sum(v for g, v in vals.items() if g not in sup)
-                assert len(sup) <= rem <= 9 * len(sup), (r["grid_id"], pop, vals)
-                for g in sup:
-                    vals[g] = rem / len(sup)
-            assert abs(sum(vals.values()) - pop) < 1e-9
-            cells.append({"geom": box(x0, y0, x0 + 100, y0 + 100), "pop": pop, **vals})
+            raw = [int(r[g]) for g in AGE]
+            est = fill_masked(raw, pop, float(r["mean_age"]), prof) if 9 in raw else np.array(raw, float)
+            if 9 in raw:  # previous method, kept for the check only
+                rem = pop - sum(v for v in raw if v != 9)
+                eq += [rem / raw.count(9) if v == 9 else v for v in raw]
+            else:
+                eq += raw
+            assert abs(est.sum() - pop) < 1e-6
+            cells.append({"geom": box(x0, y0, x0 + 100, y0 + 100), "pop": pop,
+                          **{g: float(v) for g, v in zip(AGE, est)}})
+    if stats is not None:
+        tot = sum(c["pop"] for c in cells)
+        new = [sum(c[g] for c in cells) for g in AGE]
+        stats["amziaus_grupes_miestas"] = {
+            "vidutinio_amziaus_metodas": [round(v) for v in new],
+            "vidutinio_amziaus_metodas_proc": [round(100 * v / tot, 2) for v in new],
+            "lygaus_padalijimo_metodas_iki_2026_10_20": [round(v) for v in eq],
+            "lygaus_padalijimo_metodas_proc": [round(100 * v / tot, 2) for v in eq],
+            "osp_2021_01_01": prof["counts"], "osp_2021_01_01_proc": [round(100 * v, 2) for v in prof["share"]],
+            "osp_grupiu_vid_amzius": [round(v, 2) for v in prof["mean_age"]],
+        }
     return cells
 
 
@@ -143,6 +220,16 @@ def allocate(cells, units, key):
     return {"orphan_cells": orphan_cells, "orphan_pop": orphan_pop, "level": key}
 
 
+def largest_remainder(vals):
+    """Round floats to ints so that the ints sum to round(sum(vals)) (Hamilton method)."""
+    floors = [int(math.floor(v)) for v in vals]
+    short = round(sum(vals)) - sum(floors)
+    order = sorted(range(len(vals)), key=lambda i: -(vals[i] - floors[i]))
+    for i in order[:short]:
+        floors[i] += 1
+    return floors
+
+
 def write_layer(units, name, props):
     fc = {"type": "FeatureCollection", "features": [
         {"type": "Feature", "properties": {k: u[k] for k in props}, "geometry": web_geom(u["geom"])}
@@ -158,7 +245,8 @@ def write_layer(units, name, props):
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    sen, apl, cells = seniunijos(), apylinkes(), census_cells()
+    age_stats = {}
+    sen, apl, cells = seniunijos(), apylinkes(), census_cells(age_stats)
     city = unary_union([s["geom"] for s in sen])
     sav = [f for f in load_json("adr_gra_savivaldybes.json")["features"]
            if str(f["properties"]["SAV_KODAS"]) == KAUNAS_SAV]
@@ -175,17 +263,21 @@ def main():
         "census_cells": len(cells),
         "census_pop": sum(c["pop"] for c in cells),
         "rinkejai_2024_total": sum(a["rinkejai_2024"] for a in apl),
+        **age_stats,
     }
     checks["alloc_seniunijos"] = allocate(cells, sen, "seniunijos")
     checks["alloc_apylinkes"] = allocate(cells, apl, "apylinkes")
 
     for units in (sen, apl):
         for u in units:
-            u["plotas_km2"] = round(u["geom"].area / 1e6, 3)
-            u["gyventojai_2021"] = round(u["gyventojai_2021"])
-            u["gyv_0_14"] = round(u.pop("all_00_14"))
-            u["gyv_15_64"] = round(u.pop("all_15_64"))
-            u["gyv_65_plius"] = round(u.pop("all_65_plius"))
+            u["plotas_km2"] = round(u["geom"].area / 1e6, 5)  # 5 dp: density in 22 is exact to 1 gyv./km2
+        # largest-remainder rounding: unit integers add up to the rounded city total
+        # (plain rounding gave 303 203 / 303 197 instead of 303 202; 2026-10-20)
+        for src, dst in (("gyventojai_2021", "gyventojai_2021"), ("all_00_14", "gyv_0_14"),
+                         ("all_15_64", "gyv_15_64"), ("all_65_plius", "gyv_65_plius")):
+            vals = [u.pop(src) for u in units]
+            for u, v in zip(units, largest_remainder(vals)):
+                u[dst] = v
     checks["seniunijos_pop_sum"] = sum(s["gyventojai_2021"] for s in sen)
     checks["apylinkes_pop_sum"] = sum(a["gyventojai_2021"] for a in apl)
 

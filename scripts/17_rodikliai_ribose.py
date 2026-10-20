@@ -296,7 +296,7 @@ def main():
                 "zaluma_ha": round(m["zaluma_m2"] / 1e4, 1),
                 "zaluma_m2_gyv": round(m["zaluma_m2"] / gyv, 1) if gyv else None,
                 "zaluma_ploto_dalis_proc": round(100 * m["zaluma_m2"] / r["geom"].area, 1),
-                "pesciuju_km": round(m["pesciuju_m"] / 1000, 1), "gatviu_km": round(m["gatviu_m"] / 1000, 1),
+                "pesciuju_km": round(m["pesciuju_m"] / 1000, 1), "gatviu_km": round(m["gatviu_m"] / 1000, 3),
                 "pesciuju_gatviu_santykis": round(m["pesciuju_m"] / m["gatviu_m"], 2) if m["gatviu_m"] else None,
                 "reno_baigta": c["reno_baigta"], "reno_vykdoma": c["reno_vykdoma"],
                 "reno_potencialus": c["reno_potencialus"], "reno_vardiklis": reno_den,
