@@ -1,0 +1,27 @@
+{
+ "seniunijos_n": 9,
+ "apylinkes_n": 90,
+ "city_area_km2": 156.885,
+ "seniunijos_vs_city_symdiff_km2": 0.0,
+ "apylinkes_outside_city_km2": 0.0155,
+ "city_not_covered_by_apylinkes_km2": 0.0181,
+ "census_cells": 6488,
+ "census_pop": 303202,
+ "rinkejai_2024_total": 240610,
+ "alloc_seniunijos": {
+  "orphan_cells": 57,
+  "orphan_pop": 543,
+  "level": "seniunijos"
+ },
+ "alloc_apylinkes": {
+  "orphan_cells": 57,
+  "orphan_pop": 543,
+  "level": "apylinkes"
+ },
+ "seniunijos_pop_sum": 303203,
+ "apylinkes_pop_sum": 303197,
+ "apylinkes_split_pop_lt95": 8,
+ "rinkejai_2024_seniunijose_suma": 240609,
+ "seniunijos_geojson_bytes": 30037,
+ "apylinkes_geojson_bytes": 117572
+}
