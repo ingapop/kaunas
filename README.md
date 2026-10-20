@@ -6,7 +6,7 @@ Rodikliai yra kelių rūšių: kiek įstaigų, vietų ar ploto tenka gyventojams
 
 **Atlasas:** atidarykite `index.html` naršyklėje arba šios repozitorijos GitHub Pages puslapį. Tai vienas savarankiškas failas – visi duomenys jame, serverio nereikia.
 
-**Politinė reklama.** Atlasą iš viešų duomenų neatlygintinai parengė Inga Popovaitė, Lietuvos žaliųjų partijos narė. Skirta 2027 m. savivaldybių tarybų ir merų rinkimams. Duomenis teikiančios institucijos atlaso nerengė ir jo nevertina. Tai nėra oficiali statistika.
+**Politinė reklama.** Atlasą iš viešų duomenų neatlygintinai parengė Inga Popovaitė, Lietuvos žaliųjų partijos narė, koalicijos „Kaunas gali geriau“ (Laisvės partija ir Lietuvos žaliųjų partija) kampanijai. Skirta 2027 m. savivaldybių tarybų ir merų rinkimams. Duomenis teikiančios institucijos atlaso nerengė ir jo nevertina. Tai nėra oficiali statistika.
 
 ## Kas čia yra
 
