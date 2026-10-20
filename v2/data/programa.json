@@ -1,6 +1,6 @@
 {
  "busena": "RENGIAMA – tik struktūra",
- "sugeneruota": "2026-10-19",
+ "sugeneruota": "2026-10-20",
  "skyriai": [
   {
    "id": "1",
@@ -138,7 +138,7 @@
     },
     {
      "id": "2.4",
-     "pavadinimas": "Šiuolaikinė mokykla ir „SchoolLab 2.0",
+     "pavadinimas": "Šiuolaikinė mokykla ir „SchoolLab 2.0“",
      "rodikliai": [],
      "priskirta_vietoms": [],
      "vietos_paminetos": [],
@@ -182,7 +182,7 @@
     },
     {
      "id": "3.2",
-     "pavadinimas": "Kultūra rajonuose - ne tik centre",
+     "pavadinimas": "Kultūra rajonuose – ne tik centre",
      "rodikliai": [
       "kultura"
      ],
@@ -194,7 +194,7 @@
     },
     {
      "id": "3.3",
-     "pavadinimas": "Naktinė kultūra - gyvas ir saugus miestas po darbo valandų",
+     "pavadinimas": "Naktinė kultūra – gyvas ir saugus miestas po darbo valandų",
      "rodikliai": [],
      "priskirta_vietoms": [],
      "vietos_paminetos": [],
